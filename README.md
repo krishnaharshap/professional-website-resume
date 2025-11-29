@@ -1,9 +1,9 @@
 ﻿# Professional Resume Website
 
-A clean, ATS-friendly resume website optimized for Senior QA Analyst positions.
+A resume website for Software Quality Assurance positions.
 
 ## Live Site
-View at: https://krishnaharshap.github.io/resume-website/
+View at: https://github.com/krishnaharshap/professional-website-resume
 
 ## Features
 - Modular JSON-based content management
@@ -16,17 +16,18 @@ View at: https://krishnaharshap.github.io/resume-website/
 ## Project Structure
 ```
 resume-website/
-â”œâ”€â”€ index.html
-â”œâ”€â”€ css/
-â”‚   â””â”€â”€ styles.css
-â”œâ”€â”€ js/
-â”‚   â””â”€â”€ script.js
-â”œâ”€â”€ data/
-â”‚   â””â”€â”€ resume-data.json
-â”œâ”€â”€ assets/
-â”‚   â””â”€â”€ images/
-â”œâ”€â”€ README.md
-â””â”€â”€ .gitignore
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── data/
+│   └── resume-data.json
+├── assets/
+│   └── images/
+│       └── profile.jpg (optional)
+├── README.md
+└── .gitignore
 ```
 
 ## Quick Start
@@ -41,7 +42,7 @@ git init
 git add .
 git commit -m "Initial resume website"
 git branch -M main
-git remote add origin https://github.com/krishnaharshap/resume-website.git
+git remote add origin https://github.com/krishnaharshap/professional-website-resume.git
 git push -u origin main
 ```
 
@@ -87,8 +88,3 @@ Include keywords like:
 - Agile, Scrum, TDD
 - REST Assured, Postman
 - JMeter, LoadRunner
-
-## License
-Free to use and modify for personal use.
-
-Last Updated: November 28, 2025
