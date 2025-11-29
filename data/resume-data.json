@@ -1,0 +1,86 @@
+﻿{
+    "name": "Your Full Name",
+    "title": "Senior QA Analyst",
+    "contact": {
+        "email": "your.email@example.com",
+        "phone": "+1 (123) 456-7890",
+        "location": "City, State",
+        "linkedin": "https://linkedin.com/in/yourprofile",
+        "github": "https://github.com/yourusername"
+    },
+    "summary": "Results-driven Senior QA Analyst with 8+ years of experience in software quality assurance, test automation, and team leadership. Proven expertise in developing comprehensive test strategies, implementing CI/CD pipelines, and ensuring product quality across web and mobile platforms. Strong background in Agile methodologies, API testing, and performance optimization.",
+    "skills": [
+        {
+            "category": "Test Automation",
+            "items": ["Selenium WebDriver", "Cypress", "Playwright", "TestNG", "JUnit", "PyTest"]
+        },
+        {
+            "category": "Programming Languages",
+            "items": ["Java", "Python", "JavaScript", "SQL"]
+        },
+        {
+            "category": "Testing Tools",
+            "items": ["JIRA", "TestRail", "Postman", "JMeter", "Cucumber", "REST Assured"]
+        },
+        {
+            "category": "CI/CD & DevOps",
+            "items": ["Jenkins", "Git", "Docker", "Azure DevOps", "GitHub Actions"]
+        },
+        {
+            "category": "Methodologies",
+            "items": ["Agile/Scrum", "Test-Driven Development", "Behavior-Driven Development", "Risk-Based Testing"]
+        },
+        {
+            "category": "Database & API",
+            "items": ["MySQL", "PostgreSQL", "MongoDB", "RESTful APIs", "GraphQL"]
+        }
+    ],
+    "experience": [
+        {
+            "position": "Senior QA Analyst",
+            "company": "Company Name",
+            "location": "City, State",
+            "duration": "Jan 2020 - Present",
+            "responsibilities": [
+                "Led quality assurance initiatives for enterprise-level applications serving 500K+ users",
+                "Developed and maintained automated test suites using Selenium and Cypress, reducing regression testing time by 60%",
+                "Implemented API testing framework with REST Assured, achieving 95% code coverage",
+                "Mentored team of 4 junior QA engineers in automation best practices and testing methodologies",
+                "Collaborated with development teams to integrate automated tests into CI/CD pipeline using Jenkins",
+                "Performed load and performance testing using JMeter, identifying critical bottlenecks"
+            ]
+        },
+        {
+            "position": "QA Analyst",
+            "company": "Previous Company",
+            "location": "City, State",
+            "duration": "Jun 2017 - Dec 2019",
+            "responsibilities": [
+                "Designed and executed comprehensive test plans for web and mobile applications",
+                "Created automated test scripts using Selenium WebDriver and Java",
+                "Conducted functional, regression, and integration testing across multiple platforms",
+                "Participated in Agile ceremonies and collaborated with cross-functional teams",
+                "Documented and tracked defects using JIRA, ensuring timely resolution"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Science in Computer Science",
+            "institution": "University Name",
+            "year": "2017"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "ISTQB Certified Tester - Advanced Level",
+            "issuer": "ISTQB",
+            "year": "2021"
+        },
+        {
+            "name": "Certified Scrum Master (CSM)",
+            "issuer": "Scrum Alliance",
+            "year": "2020"
+        }
+    ]
+}

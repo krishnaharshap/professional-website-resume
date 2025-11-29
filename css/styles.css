@@ -1,0 +1,275 @@
+﻿/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-gray: #ecf0f1;
+    --border-color: #ddd;
+    --spacing: 1.5rem;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding-bottom: var(--spacing);
+    border-bottom: 3px solid var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+#name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+#title {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Summary */
+#summary {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skill-category {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.skill-category h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.skill-category p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Experience */
+.experience-item {
+    margin-bottom: 2rem;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.experience-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.company {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.experience-item ul {
+    list-style-position: outside;
+    margin-left: 1.5rem;
+}
+
+.experience-item li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Education & Certifications */
+.education-item,
+.cert-item {
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.education-item h3,
+.cert-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.education-item p,
+.cert-item p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-top: 0.25rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light-gray);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+#print-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#print-btn:hover {
+    background: #2980b9;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    #print-btn {
+        display: none;
+    }
+
+    footer {
+        page-break-inside: avoid;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    #name {
+        font-size: 2rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
