@@ -1,86 +1,226 @@
 ﻿{
-    "name": "Your Full Name",
-    "title": "Senior QA Analyst",
+    "name": "Krishna Harsha Puppala",
+    "title": "Senior Quality Assurance Analyst",
     "contact": {
-        "email": "your.email@example.com",
-        "phone": "+1 (123) 456-7890",
-        "location": "City, State",
-        "linkedin": "https://linkedin.com/in/yourprofile",
-        "github": "https://github.com/yourusername"
+        "email": "krishnaharshap11@gmail.com",
+        "phone": "+1 (587) 409-6060",
+        "location": "Calgary, AB, Canada",
+        "linkedin": "",
+        "github": "https://github.com/krishnaharshap"
     },
-    "summary": "Results-driven Senior QA Analyst with 8+ years of experience in software quality assurance, test automation, and team leadership. Proven expertise in developing comprehensive test strategies, implementing CI/CD pipelines, and ensuring product quality across web and mobile platforms. Strong background in Agile methodologies, API testing, and performance optimization.",
+    "summary": "Seasoned Quality Assurance Professional with proven expertise from high-velocity software automation to regulated Medical Device Validation, working across enterprise, healthcare, and cloud-based applications. Hands-on expertise in developing automation frameworks using Java, Python, Selenium, Playwright, Appium, TestNG, and Cucumber (BDD). Skilled in designing and executing functional, regression, integration, API, smoke, and performance tests across web, mobile, on-prem, and cloud platforms (Azure). Recognized for improving defect detection rates, reducing release cycle defects, investigating root cause analysis and optimizing automation coverage to accelerate delivery. Strong collaborator who partners seamlessly with development, product, design, DevOps, and business stakeholders to ensure high-quality, on-time releases. Demonstrates strong analytical, documentation, and problem-solving skills with a continuous-improvement mindset and exceptional attention to detail. Proficient in building risk-based test strategies, authoring detailed test plans, and implementing traceability matrices to ensure full end-to-end coverage for complex features and multi-system integrations. Adept at API validation and automation (Postman), performance testing (JMeter), and CI/CD integration using Jenkins, Git, and Maven. Leverages a strong foundation in regulated medical device verification and validation (V&V), including risk management, requirement traceability, and compliance-focused testing to drive software quality excellence.",
     "skills": [
         {
-            "category": "Test Automation",
-            "items": ["Selenium WebDriver", "Cypress", "Playwright", "TestNG", "JUnit", "PyTest"]
+            "category": "Automation Tools",
+            "items": [
+                "Selenium WebDriver",
+                "Playwright",
+                "Appium",
+                "Cypress",
+                "JMeter",
+                "Testim.io",
+                "BrowserStack"
+            ]
         },
         {
             "category": "Programming Languages",
-            "items": ["Java", "Python", "JavaScript", "SQL"]
+            "items": [
+                "Java",
+                "Python",
+                "JavaScript",
+                "SQL"
+            ]
         },
         {
-            "category": "Testing Tools",
-            "items": ["JIRA", "TestRail", "Postman", "JMeter", "Cucumber", "REST Assured"]
+            "category": "Testing Frameworks",
+            "items": [
+                "TestNG",
+                "Cucumber (BDD)",
+                "JUnit",
+                "Page Object Model (POM)",
+                "Hybrid Frameworks",
+                "Data-Driven Frameworks"
+            ]
         },
         {
             "category": "CI/CD & DevOps",
-            "items": ["Jenkins", "Git", "Docker", "Azure DevOps", "GitHub Actions"]
+            "items": [
+                "Jenkins",
+                "Azure DevOps",
+                "Git",
+                "GitHub",
+                "BitBucket",
+                "Maven",
+                "Docker"
+            ]
         },
         {
-            "category": "Methodologies",
-            "items": ["Agile/Scrum", "Test-Driven Development", "Behavior-Driven Development", "Risk-Based Testing"]
+            "category": "Testing Methodologies",
+            "items": [
+                "Functional Testing",
+                "Regression Testing",
+                "Integration Testing",
+                "API Testing",
+                "Smoke Testing",
+                "Performance Testing",
+                "Load Testing",
+                "UAT",
+                "E2E Testing"
+            ]
         },
         {
-            "category": "Database & API",
-            "items": ["MySQL", "PostgreSQL", "MongoDB", "RESTful APIs", "GraphQL"]
+            "category": "Test Management & Defect Tracking",
+            "items": [
+                "JIRA",
+                "ServiceNow",
+                "HP ALM",
+                "qTest",
+                "TestRail"
+            ]
+        },
+        {
+            "category": "API & Database Testing",
+            "items": [
+                "Postman",
+                "REST APIs",
+                "MySQL",
+                "Microsoft SQL Server Management Studio"
+            ]
+        },
+        {
+            "category": "Platform & Environments",
+            "items": [
+                "Windows",
+                "Linux",
+                "Android",
+                "iOS",
+                "Azure Cloud",
+                "AWS"
+            ]
+        },
+        {
+            "category": "Regulatory & Compliance",
+            "items": [
+                "Medical Device V&V",
+                "FDA Design Controls",
+                "Risk Management",
+                "Requirement Traceability",
+                "CAPA Investigation"
+            ]
         }
     ],
     "experience": [
         {
-            "position": "Senior QA Analyst",
-            "company": "Company Name",
-            "location": "City, State",
-            "duration": "Jan 2020 - Present",
+            "position": "Senior Quality Assurance Analyst",
+            "company": "Sovereign Insurance",
+            "location": "Calgary, AB, Canada",
+            "duration": "Dec 2023 - Nov 2025",
             "responsibilities": [
-                "Led quality assurance initiatives for enterprise-level applications serving 500K+ users",
-                "Developed and maintained automated test suites using Selenium and Cypress, reducing regression testing time by 60%",
-                "Implemented API testing framework with REST Assured, achieving 95% code coverage",
-                "Mentored team of 4 junior QA engineers in automation best practices and testing methodologies",
-                "Collaborated with development teams to integrate automated tests into CI/CD pipeline using Jenkins",
-                "Performed load and performance testing using JMeter, identifying critical bottlenecks"
+                "Led end-to-end QA testing for enterprise insurance platforms, ensuring quality releases for policy workflows in various legacy web applications",
+                "Designed and executed automated regression suites with over 1,000+ automated test cases across critical insurance modules, improving defect detection rate in pre-production by approximately 30% using Selenium and Cucumber, and reducing regression cycle time by approximately 50%",
+                "Led the full testing efforts as sole QA in an Agile team on Tomcat-based web service front-end (E2E, regression, smoke), based on monthly release cadence, while uncovering critical defects that saved the business operations millions annually in underwriters' time and resources, and delivered the project on schedule and within budget",
+                "Led initial test planning for enterprise legacy application server migrations from Windows Server 2016 to 2022, while actively participating in validation efforts of all pre-production databases inside SQL Server (Microsoft SQL Server Management Studio) migrations",
+                "Enhanced and maintained automated regression and smoke test suites using Selenium WebDriver with Cucumber BDD (Gherkin) in a Maven-based Java TestNG automation framework to validate a Springboot and Java PrimeFaces-based UI",
+                "Performed REST API validation using Postman, including scenario-based verification, payload validation, and response time analysis to ensure data integrity across modern policy rating engines and legacy AS400 systems",
+                "Collaborated in Agile teams to define acceptance criteria, triage defects, and support UAT sign-offs",
+                "Maintained and monitored Jenkins continuous integration (CI) pipelines by integrating automated test suites with build pipelines and providing quality gates before deployment"
             ]
         },
         {
-            "position": "QA Analyst",
-            "company": "Previous Company",
-            "location": "City, State",
-            "duration": "Jun 2017 - Dec 2019",
+            "position": "Senior Quality Assurance Analyst",
+            "company": "The AppLabb Inc.",
+            "location": "Calgary, AB, Canada",
+            "duration": "Jan 2023 - Dec 2023",
             "responsibilities": [
-                "Designed and executed comprehensive test plans for web and mobile applications",
-                "Created automated test scripts using Selenium WebDriver and Java",
-                "Conducted functional, regression, and integration testing across multiple platforms",
-                "Participated in Agile ceremonies and collaborated with cross-functional teams",
-                "Documented and tracked defects using JIRA, ensuring timely resolution"
+                "Performed functional, integration, and regression testing for cross-platform mobile applications, achieving 80% defect detection rate while collaborating with developers across build release cycles at Suncor Energy engagement",
+                "Led UAT cycles, documented defects in ServiceNow, and provided QA release sign-offs for multiple client projects",
+                "Evaluated and communicated the impact of scope changes from a timeline and QA risk perspective to leadership and stakeholders",
+                "Introduced simulators for mobile app testing on the Android platform for multiple OS versions, improving testing efficiency",
+                "Executed comprehensive test plans for mobile app platforms (iOS and Android) ensuring cross-platform compatibility",
+                "Worked closely with internal delivery teams, PMO, and business stakeholders to ensure successful delivery of projects by identifying and mitigating testing risks",
+                "Collaborated with QA SMEs, developers, and system architects to develop automation strategies and frameworks aligned with project requirements",
+                "Conducted backend database testing using MySQL, including validation of stored data, procedures, triggers, and jobs for internal corporate projects",
+                "Conducted regression testing on a mortgage broker application featuring an AI-enabled chatbox built on Microsoft Azure Portal Services, creating end-to-end test suites including UI, API, and data validation",
+                "Created and updated automation scripts to execute tests for mobile applications using Testim.io and BrowserStack cloud technologies",
+                "Updated and executed load and performance test plans and scripts using LoadRunner and JMeter to ensure application scalability",
+                "Piloted UAT activities for several application version releases and provided QA sign-off for business stakeholders"
             ]
+        },
+        {
+            "position": "Quality Engineer (Verification & Validation)",
+            "company": "Fraank Systems",
+            "location": "United States",
+            "duration": "Dec 2018 - Sep 2021",
+            "responsibilities": [
+                "Conducted verification and validation of medical device systems focusing on reliability, risk assessment, and failure analysis for clients including Baxter Healthcare, Roche Diagnostics, and Mentor Worldwide",
+                "Designed test protocols and executed validation cycles ensuring compliance with FDA design control requirements and medical device regulations",
+                "Performed defect tracking, test traceability matrix creation, and supported CAPA (Corrective and Preventive Action) investigation documentation",
+                "Collaborated with cross-functional software, hardware, and QA teams to evaluate test results and drive continuous improvements in product quality",
+                "Ensured all testing activities aligned with regulatory standards and quality system requirements for medical device manufacturing"
+            ]
+        },
+        {
+            "position": "Design Quality Engineer (Medical Device Manufacturing)",
+            "company": "Vastek Inc.",
+            "location": "Warsaw, IN, United States",
+            "duration": "Mar 2017 - Dec 2018",
+            "responsibilities": [
+                "Performed design verification testing for electromechanical medical devices following structured V&V lifecycle for Zimmer Biomet client projects",
+                "Executed test cases, documented defects, and ensured alignment with regulatory and quality system requirements throughout the product development lifecycle",
+                "Assisted in test report documentation and traceability linking requirements to validation outcomes to ensure comprehensive coverage",
+                "Supported quality assurance activities in a regulated medical device manufacturing environment, ensuring compliance with FDA and ISO standards"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Selenium Cucumber Framework",
+            "description": "Developed a Java + Selenium + Cucumber BDD test-automation framework to validate web applications end-to-end",
+            "technologies": "Java, Selenium WebDriver, Cucumber BDD, TestNG, Maven",
+            "link": "https://github.com/krishnaharshap"
+        },
+        {
+            "name": "Playwright Python MCP",
+            "description": "Built a Python + Playwright test automation suite integrating UI and API testing with CI/CD workflows",
+            "technologies": "Python, Playwright, API Testing, CI/CD",
+            "link": "https://github.com/krishnaharshap"
+        },
+        {
+            "name": "Docker QA Demo",
+            "description": "Authored a Docker-based QA demo project for containerized test environments, improving reproducibility of test runs",
+            "technologies": "Docker, Containerization, Test Automation",
+            "link": "https://github.com/krishnaharshap"
         }
     ],
     "education": [
         {
-            "degree": "Bachelor of Science in Computer Science",
-            "institution": "University Name",
-            "year": "2017"
+            "degree": "Master of Science in Engineering Management",
+            "institution": "Missouri State University",
+            "location": "United States",
+            "year": "2014 - 2016"
+        },
+        {
+            "degree": "Bachelor of Technology in Mechanical Engineering",
+            "institution": "National Institute of Technology (NIT) Warangal",
+            "location": "India",
+            "year": "2008 - 2012"
         }
     ],
     "certifications": [
         {
-            "name": "ISTQB Certified Tester - Advanced Level",
-            "issuer": "ISTQB",
-            "year": "2021"
+            "name": "ISTQB Certified Tester - Foundation Level (CTFL)",
+            "issuer": "International Software Testing Qualifications Board",
+            "year": "2023"
         },
         {
-            "name": "Certified Scrum Master (CSM)",
-            "issuer": "Scrum Alliance",
-            "year": "2020"
+            "name": "AWS Certified Cloud Practitioner (CCP)",
+            "issuer": "Amazon Web Services",
+            "year": "2024"
+        },
+        {
+            "name": "GitHub Foundations",
+            "issuer": "GitHub",
+            "year": "2025"
         }
     ]
 }

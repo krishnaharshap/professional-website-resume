@@ -17,16 +17,15 @@ function populateResume(data) {
     document.getElementById('name').textContent = data.name;
     document.getElementById('title').textContent = data.title;
     
-    // Contact Info
-    const contactHTML = `
-        <span>ðŸ“§ ${data.contact.email}</span>
-        <span>ðŸ“± ${data.contact.phone}</span>
-        <span>ðŸ“ ${data.contact.location}</span>
-        ${data.contact.linkedin ? `<span>ðŸ”— <a href="${data.contact.linkedin}" target="_blank">LinkedIn</a></span>` : ''}
-        ${data.contact.github ? `<span>ðŸ’» <a href="${data.contact.github}" target="_blank">GitHub</a></span>` : ''}
-    `;
-    document.getElementById('contact').innerHTML = contactHTML;
-
+// Contact Info
+const contactHTML = `
+    <span>Email: ${data.contact.email}</span>
+    <span>Phone: ${data.contact.phone}</span>
+    <span>Location: ${data.contact.location}</span>
+    ${data.contact.linkedin ? `<span><a href="${data.contact.linkedin}" target="_blank">LinkedIn</a></span>` : ''}
+    ${data.contact.github ? `<span><a href="${data.contact.github}" target="_blank">GitHub</a></span>` : ''}
+`;
+document.getElementById('contact').innerHTML = contactHTML;
     // Summary
     document.getElementById('summary').textContent = data.summary;
 
