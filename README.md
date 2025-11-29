@@ -3,7 +3,7 @@
 A resume website for Software Quality Assurance positions.
 
 ## Live Site
-View at: https://github.com/krishnaharshap/professional-website-resume
+View at: [GitHub Pages Website](https://krishnaharshap.github.io/professional-website-resume/)
 
 ## Features
 - Modular JSON-based content management
