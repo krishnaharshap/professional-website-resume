@@ -208,19 +208,43 @@
     ],
     "certifications": [
         {
+            "name": "Information Technology Fundamentals Certificate",
+            "issuer": "Southern Alberta Institute of Technology (SAIT), Calgary",
+            "year": "May 2026",
+            "details": [
+                "IT Business Analysis",
+                "Project Management Essentials",
+                "Data Concepts",
+                "Digital Solutioning",
+                "Introduction to Python Programming",
+                "Agile Project Management",
+                "Programming with Python",
+                "Python and Data Analytics"
+            ]
+        },
+        {
+            "name": "CCIS IT Bridging Program Employment Skills Training",
+            "issuer": "",
+            "year": "Apr 2026",
+            "details": []
+        },
+        {
             "name": "ISTQB Certified Tester - Foundation Level (CTFL)",
             "issuer": "International Software Testing Qualifications Board",
-            "year": "2023"
+            "year": "2023",
+            "details": []
         },
         {
             "name": "AWS Certified Cloud Practitioner (CCP)",
             "issuer": "Amazon Web Services",
-            "year": "2024"
+            "year": "2024",
+            "details": []
         },
         {
             "name": "GitHub Foundations",
             "issuer": "GitHub",
-            "year": "2025"
+            "year": "2025",
+            "details": []
         }
     ]
 }

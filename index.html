@@ -11,49 +11,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header id="header">
-            <h1 id="name"></h1>
-            <p id="title"></p>
-            <div class="contact-info" id="contact"></div>
-        </header>
-
-        <!-- Professional Summary -->
-        <section class="section" id="summary-section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p id="summary"></p>
-        </section>
-
-        <!-- Skills -->
-        <section class="section" id="skills-section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div id="skills" class="skills-grid"></div>
-        </section>
-
-        <!-- Experience -->
-        <section class="section" id="experience-section">
-            <h2 class="section-title">Professional Experience</h2>
-            <div id="experience"></div>
-        </section>
-
-        <!-- Education -->
-        <section class="section" id="education-section">
-            <h2 class="section-title">Education</h2>
-            <div id="education"></div>
-        </section>
-
-        <!-- Certifications -->
-        <section class="section" id="certifications-section">
-            <h2 class="section-title">Certifications</h2>
-            <div id="certifications"></div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>Last Updated: <span id="last-updated"></span></p>
-            <button id="print-btn" onclick="window.print()">Download PDF</button>
-        </footer>
+    <div class="book">
+        <div class="pages" id="pages">
+            <!-- Page 1: Header and Summary -->
+            <div class="page active" id="page1">
+                <div class="container">
+                    <header id="header">
+                        <h1 id="name"></h1>
+                        <p id="title"></p>
+                        <div class="contact-info" id="contact"></div>
+                    </header>
+                    <section class="section" id="summary-section">
+                        <h2 class="section-title">Professional Summary</h2>
+                        <p id="summary"></p>
+                    </section>
+                </div>
+            </div>
+            <!-- Page 2: Skills -->
+            <div class="page" id="page2">
+                <div class="container">
+                    <section class="section" id="skills-section">
+                        <h2 class="section-title">Technical Skills</h2>
+                        <div id="skills" class="skills-grid"></div>
+                    </section>
+                </div>
+            </div>
+            <!-- Page 3: Experience -->
+            <div class="page" id="page3">
+                <div class="container">
+                    <section class="section" id="experience-section">
+                        <h2 class="section-title">Professional Experience</h2>
+                        <div id="experience"></div>
+                    </section>
+                </div>
+            </div>
+            <!-- Page 4: Projects, Education, Certifications -->
+            <div class="page" id="page4">
+                <div class="container">
+                    <section class="section" id="projects-section">
+                        <h2 class="section-title">Projects</h2>
+                        <div id="projects"></div>
+                    </section>
+                    <section class="section" id="education-section">
+                        <h2 class="section-title">Education</h2>
+                        <div id="education"></div>
+                    </section>
+                    <section class="section" id="certifications-section">
+                        <h2 class="section-title">Certifications</h2>
+                        <div id="certifications"></div>
+                    </section>
+                    <footer>
+                        <p>Last Updated: <span id="last-updated"></span></p>
+                        <button id="print-btn" onclick="window.print()">Download PDF</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button id="prev" disabled>Previous</button>
+            <button id="next">Next</button>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
