@@ -54,7 +54,8 @@ test.describe("content", () => {
     await expect(
       page.locator("#projects-body a[href='https://github.com/krishnaharshap/selenium-cucumber-framework']")
     ).toBeAttached();
-    await expect(page.locator("#case-study .case-row")).toHaveCount(5);
+    await expect(page.locator("#case-study .case-row")).toHaveCount(4);
+    await expect(page.locator("#case-study .case-links a")).toHaveCount(2);
 
     // Credentials + contact
     await expect(page.locator("#education-body")).toContainText("Materials Science");

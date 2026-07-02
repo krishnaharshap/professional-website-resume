@@ -1,12 +1,5 @@
 {
-  "_schema": "Sections 2-6 of the site hydrate from this file. The hero (name, title, value prop, contact) is static in index.html; update both when identity fields change. Bump contentVersion in index.html (data-content-version) whenever this file changes so the CDN cache busts.",
-  "headlines": {
-    "skills": "Tooling chosen by risk, not fashion",
-    "experience": "Shipping insurance platforms without Sev-1s",
-    "experienceEarly": "Trained where defects cost recalls",
-    "projects": "Proof you can run",
-    "credentials": "Credentials and contact"
-  },
+  "_schema": "Sections 2-6 of the site hydrate from this file. The hero (name, title, value prop, contact) is static in index.html; update both when identity fields change. Section headlines are also static in index.html, not hydrated from here, so there is one source of truth to edit. Bump contentVersion in index.html (data-content-version) whenever this file changes so the CDN cache busts.",
   "skills": [
     {
       "category": "Test Automation",
@@ -223,33 +216,28 @@
   ],
   "caseStudy": {
     "title": "How this site is tested",
-    "intro": "This page is its own test subject. The strategy is risk-based: each risk maps to a spec, and CI runs the suite on every push.",
+    "intro": "I test this page the way I test the products I work on: name what could go wrong, then make sure it cannot fail quietly.",
     "rows": [
       {
-        "risk": "Content drifts from the source resume",
-        "control": "content.spec asserts rendered sections against resume-data.json, including a banned-character scan"
+        "risk": "The content could quietly drift from my real resume",
+        "control": "Every section is checked against the source data automatically, on every change"
       },
       {
-        "risk": "Navigation breaks on a browser I did not open",
-        "control": "Playwright runs Chromium, Firefox, and WebKit projects in CI on every push"
+        "risk": "Navigation could break in a browser I never tested by hand",
+        "control": "The full suite runs automatically in Chrome, Firefox, and Safari"
       },
       {
-        "risk": "Contrast or focus regressions ship silently",
-        "control": "a11y.spec runs axe-core checks plus keyboard traversal assertions"
+        "risk": "Accessibility issues could slip through unnoticed",
+        "control": "Automated accessibility scans and a full keyboard-only walkthrough run on every change"
       },
       {
-        "risk": "External links rot after the repo goes quiet",
-        "control": "A scheduled links workflow probes every external URL with per-host status policies, kept out of the PR gate so it cannot cry wolf"
-      },
-      {
-        "risk": "The print and PDF path degrades",
-        "control": "print.spec emulates print media and asserts all six sections render linearly"
+        "risk": "Links go stale, or the downloadable resume falls out of sync",
+        "control": "Broken links are caught on a schedule, and the PDF is generated from this same page so it can not drift"
       }
     ],
     "links": {
       "workflow": "https://github.com/krishnaharshap/professional-website-resume/actions",
-      "tests": "https://github.com/krishnaharshap/professional-website-resume/tree/main/tests",
-      "allure": "https://krishnaharshap.github.io/selenium-cucumber-framework/"
+      "tests": "https://github.com/krishnaharshap/professional-website-resume/tree/main/tests"
     }
   },
   "education": [

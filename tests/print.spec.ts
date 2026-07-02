@@ -13,7 +13,7 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
     await page.emulateMedia({ media: "print" });
 
     // Nav chrome and interactive-only elements disappear
-    for (const selector of [".theme-toggle", ".dot-rail", ".kbd-hint", ".tested-strip"]) {
+    for (const selector of [".theme-toggle", ".dot-rail", ".kbd-hint", ".case-links"]) {
       const display = await page
         .locator(selector)
         .first()
@@ -36,7 +36,7 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
       "Shipping insurance platforms without Sev-1s",
       "Trained where defects cost recalls",
       "Proof you can run",
-      "Credentials and contact",
+      "Reach me at",
     ]) {
       await expect(page.locator("main")).toContainText(heading);
     }
