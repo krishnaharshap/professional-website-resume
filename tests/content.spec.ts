@@ -13,8 +13,7 @@ test.describe("content", () => {
     await expect(page.locator(".hero .eyebrow")).toContainText("QA ENGINEER / SDET");
     await expect(page.locator(".value-prop")).toContainText("Walnut Insurance");
     await expect(page.locator(".value-prop")).toContainText("risk");
-    await expect(page.locator(".hero-links a[href^='mailto:']")).toBeVisible();
-    await expect(page.locator(".trace-panel")).toContainText("this page tests itself");
+    await expect(page.locator(".hero-links a[href$='.pdf']")).toBeVisible();
   });
 
   test("all sections hydrate from resume-data.json", async ({ page }) => {
@@ -61,7 +60,13 @@ test.describe("content", () => {
     await expect(page.locator("#education-body")).toContainText("Materials Science");
     await expect(page.locator("#education-body")).toContainText("Metallurgical & Materials Engineering");
     await expect(page.locator("#certifications-body")).toContainText("ISTQB");
-    await expect(page.locator("#contact-body")).toContainText("(587) 409-6060");
+    // Contact lives in one place only: grouped as primary (email, phone)
+    // and secondary (location, profiles), never repeated in the hero.
+    await expect(page.locator(".contact-primary")).toContainText("(587) 409-6060");
+    await expect(page.locator(".contact-primary a[href^='mailto:']")).toBeAttached();
+    await expect(page.locator(".contact-secondary")).toContainText("Calgary");
+    await expect(page.locator(".contact-secondary a")).toHaveCount(2);
+    await expect(page.locator(".hero-links a")).toHaveCount(1);
     await expect(page.locator("#last-updated")).toContainText("content v");
   });
 

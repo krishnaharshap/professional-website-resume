@@ -209,24 +209,6 @@ a:hover { text-decoration-thickness: 2px; }
   align-items: center;
 }
 
-.trace-panel {
-  border: 1px solid var(--border);
-  border-left: 2px solid var(--accent);
-  background: var(--surface);
-  padding: 1.25rem 1.5rem;
-  font-size: 0.85rem;
-  max-width: 620px;
-  line-height: 1.9;
-}
-.trace-title { color: var(--text-2); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.72rem; }
-.trace-key {
-  display: inline-block;
-  min-width: 4ch;
-  margin-right: 1ch;
-  color: var(--accent);
-  font-weight: 500;
-}
-
 .kbd-hint { margin-top: 2.5rem; font-size: 0.78rem; color: var(--text-2); }
 
 /* hero entrance: 2 intentional motions, nothing else moves on load */
@@ -347,9 +329,40 @@ a:hover { text-decoration-thickness: 2px; }
 .credential-item { margin-bottom: 1.1rem; }
 .credential-item p { color: var(--text-2); font-size: 0.9em; }
 
-.contact-block { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
-.contact-block a { font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
-.contact-block span { color: var(--text-2); min-height: 44px; display: inline-flex; align-items: center; }
+/* Contact is grouped in two tiers: primary (email, phone) reads first and
+   largest since it is the actual reach-out action; secondary (location,
+   profile links) sits underneath, smaller. This is the site's one and only
+   contact block, kept out of the hero so it is never repeated. */
+.contact-block { margin-bottom: 2rem; }
+.contact-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.contact-primary a {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.contact-primary span { font-size: 1.05rem; color: var(--text-2); }
+.contact-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.contact-secondary a,
+.contact-secondary span {
+  font-size: 0.9em;
+  color: var(--text-2);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.contact-secondary a { font-weight: 600; color: var(--accent); }
 
 .footer-note { font-size: 0.78rem; color: var(--text-2); }
 
@@ -403,7 +416,7 @@ a:hover { text-decoration-thickness: 2px; }
   }
   html { scroll-snap-type: none; }
   .theme-toggle, .dot-rail, .kbd-hint, .skip-link, .case-links,
-  .data-error, .noscript-note, .skeleton { display: none !important; }
+  .contact-block, .data-error, .noscript-note, .skeleton { display: none !important; }
   .print-contact {
     display: block;
     font-size: 0.72rem;
@@ -419,5 +432,5 @@ a:hover { text-decoration-thickness: 2px; }
   .experience-item, .project-card, .credential-item { break-inside: avoid; }
   .hero > * { animation: none !important; }
   a { color: var(--accent); }
-  .hero-links a[href$=".pdf"] { display: none; }
+  .hero-links { display: none; }
 }
