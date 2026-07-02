@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | Krishna Puppala</title>
+<meta name="robots" content="noindex">
+<script>
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<link rel="stylesheet" href="/professional-website-resume/css/styles.css">
+</head>
+<body>
+<main class="slide hero" style="min-height:100svh">
+  <p class="eyebrow mono">HTTP 404 &middot; PATH NOT FOUND</p>
+  <h1>This page failed the smoke test</h1>
+  <p class="value-prop">
+    Expected: a resume section. Actual: nothing at this path. Severity: low.
+    Reproduction steps below.
+  </p>
+  <div class="trace-panel mono">
+    <p class="trace-title">defect report</p>
+    <p><span class="trace-key">RISK</span> a shared link rotted or a path was mistyped</p>
+    <p><span class="trace-key">FIX</span> <a href="/professional-website-resume/">return to the resume</a></p>
+    <p><span class="trace-key">CI</span> a scheduled link check watches for exactly this</p>
+  </div>
+</main>
+</body>
+</html>

@@ -1,78 +1,171 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-content-version="2026-07-01">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Resume - Senior QA Analyst">
-    <title>Professional Resume</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Puppala | QA Engineer / SDET, Calgary</title>
+<meta name="description" content="QA Engineer and SDET in Calgary with a risk-based testing mindset built in regulated medical device manufacturing. Selenium, Playwright, API and data testing, CI/CD. Currently at Walnut Insurance.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Krishna Puppala | QA Engineer / SDET">
+<meta property="og:description" content="Risk-based testing mindset from regulated manufacturing QE, applied to enterprise SaaS. Selenium, Playwright, API and data testing, CI/CD.">
+<meta property="og:url" content="https://krishnaharshap.github.io/professional-website-resume/">
+<meta name="theme-color" content="#14101f">
+<script>
+  // Theme must land on <html> before first paint to avoid a flash of the
+  // wrong palette. localStorage can throw in private mode.
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Krishna Harsha Puppala",
+  "jobTitle": "QA Engineer / SDET",
+  "address": { "@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA" },
+  "email": "mailto:krishnaharshap11@gmail.com",
+  "url": "https://krishnaharshap.github.io/professional-website-resume/",
+  "sameAs": [
+    "https://github.com/krishnaharshap",
+    "https://www.linkedin.com/in/krishna-p-472514236/"
+  ]
+}
+</script>
+<script type="module" src="js/main.js"></script>
 </head>
 <body>
-    <div class="book">
-        <div class="pages" id="pages">
-            <!-- Page 1: Header and Summary -->
-            <div class="page active" id="page1">
-                <div class="container">
-                    <header id="header">
-                        <h1 id="name"></h1>
-                        <p id="title"></p>
-                        <div class="contact-info" id="contact"></div>
-                    </header>
-                    <section class="section" id="summary-section">
-                        <h2 class="section-title">Professional Summary</h2>
-                        <p id="summary"></p>
-                    </section>
-                </div>
-            </div>
-            <!-- Page 2: Skills -->
-            <div class="page" id="page2">
-                <div class="container">
-                    <section class="section" id="skills-section">
-                        <h2 class="section-title">Technical Skills</h2>
-                        <div id="skills" class="skills-grid"></div>
-                    </section>
-                </div>
-            </div>
-            <!-- Page 3: Experience -->
-            <div class="page" id="page3">
-                <div class="container">
-                    <section class="section" id="experience-section">
-                        <h2 class="section-title">Professional Experience</h2>
-                        <div id="experience"></div>
-                    </section>
-                </div>
-            </div>
-            <!-- Page 4: Projects, Education, Certifications -->
-            <div class="page" id="page4">
-                <div class="container">
-                    <section class="section" id="projects-section">
-                        <h2 class="section-title">Projects</h2>
-                        <div id="projects"></div>
-                    </section>
-                    <section class="section" id="education-section">
-                        <h2 class="section-title">Education</h2>
-                        <div id="education"></div>
-                    </section>
-                    <section class="section" id="certifications-section">
-                        <h2 class="section-title">Certifications</h2>
-                        <div id="certifications"></div>
-                    </section>
-                    <footer>
-                        <p>Last Updated: <span id="last-updated"></span></p>
-                        <button id="print-btn" onclick="window.print()">Download PDF</button>
-                    </footer>
-                </div>
-            </div>
-        </div>
-        <div class="navigation">
-            <button id="prev" disabled>Previous</button>
-            <button id="next">Next</button>
-        </div>
-    </div>
 
-    <script src="js/script.js"></script>
+<a class="skip-link" href="#skills">Skip to content</a>
+
+<header class="top-bar">
+  <span class="top-brand mono">krishna.puppala</span>
+  <button id="theme-toggle" class="theme-toggle mono" type="button">theme</button>
+</header>
+
+<nav class="dot-rail" aria-label="Sections">
+  <ul id="dot-list">
+    <li><a href="#hero" class="dot" data-section="hero"><span class="dot-label mono">Intro</span></a></li>
+    <li><a href="#skills" class="dot" data-section="skills"><span class="dot-label mono">Skills</span></a></li>
+    <li><a href="#experience" class="dot" data-section="experience"><span class="dot-label mono">Experience</span></a></li>
+    <li><a href="#experience-early" class="dot" data-section="experience-early"><span class="dot-label mono">Regulated QE</span></a></li>
+    <li><a href="#projects" class="dot" data-section="projects"><span class="dot-label mono">Projects</span></a></li>
+    <li><a href="#credentials" class="dot" data-section="credentials"><span class="dot-label mono">Contact</span></a></li>
+  </ul>
+</nav>
+
+<div id="live-region" class="visually-hidden" aria-live="polite"></div>
+
+<main id="slides">
+
+  <!-- Section 1: hero is fully static. It must read complete with JS disabled
+       and before data hydration resolves. -->
+  <section class="slide hero" id="hero" tabindex="-1" aria-label="Introduction">
+    <p class="eyebrow mono">QA ENGINEER / SDET &middot; CALGARY, AB</p>
+    <h1>Krishna Puppala</h1>
+    <p class="value-prop">
+      I test by risk, a habit built where defects meant recalls. Six years from
+      FDA-regulated medical device manufacturing to enterprise SaaS: Selenium and
+      Playwright frameworks in Java, Python, and TypeScript, API and MS-SQL data
+      validation, CI/CD quality gates. Currently building a Playwright-TypeScript
+      framework from scratch at Walnut Insurance.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/krishnaharshap" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/krishna-p-472514236/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:krishnaharshap11@gmail.com">Email</a>
+      <a href="assets/Krishna_Puppala_Resume.pdf" download>Resume PDF</a>
+    </div>
+    <div class="trace-panel mono" aria-label="How this page tests itself">
+      <p class="trace-title">this page tests itself</p>
+      <p><span class="trace-key">RISK</span> content drifts from the source resume</p>
+      <p><span class="trace-key">SPEC</span> tests/content.spec.ts</p>
+      <p><span class="trace-key">CI</span> Playwright on every push <a href="https://github.com/krishnaharshap/professional-website-resume/actions" target="_blank" rel="noopener">view runs</a></p>
+    </div>
+    <p class="kbd-hint mono" data-nav-hint hidden>scroll, or use arrow keys and the dots</p>
+  </section>
+
+  <!-- Sections 2-6 hydrate from data/resume-data.json. Headline slots are
+       static so the page scans even if hydration fails. -->
+  <section class="slide" id="skills" tabindex="-1" aria-label="Skills">
+    <p class="eyebrow mono">SKILLS</p>
+    <h2>Tooling chosen by risk, not fashion</h2>
+    <div id="skills-body" class="skills-columns">
+      <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="slide" id="experience" tabindex="-1" aria-label="Experience">
+    <p class="eyebrow mono">EXPERIENCE &middot; 2023 - PRESENT</p>
+    <h2>Shipping insurance platforms without Sev-1s</h2>
+    <div id="experience-body">
+      <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="slide" id="experience-early" tabindex="-1" aria-label="Earlier experience">
+    <p class="eyebrow mono">EXPERIENCE &middot; 2017 - 2023</p>
+    <h2>Trained where defects cost recalls</h2>
+    <div id="experience-early-body">
+      <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="slide" id="projects" tabindex="-1" aria-label="Projects">
+    <p class="eyebrow mono">PROJECTS</p>
+    <h2>Proof you can run</h2>
+    <div id="projects-body" class="projects-grid">
+      <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <div id="case-study"></div>
+    <div class="tested-strip">
+      <img src="https://github.com/krishnaharshap/professional-website-resume/actions/workflows/ci.yml/badge.svg"
+           alt="CI status badge" width="120" height="20" loading="lazy">
+      <span>This site ships with its own Playwright suite.</span>
+      <a href="https://github.com/krishnaharshap/professional-website-resume/tree/main/tests" target="_blank" rel="noopener">Read the specs</a>
+    </div>
+  </section>
+
+  <section class="slide" id="credentials" tabindex="-1" aria-label="Credentials and contact">
+    <p class="eyebrow mono">CREDENTIALS &middot; CONTACT</p>
+    <h2>Credentials and contact</h2>
+    <div class="credentials-columns">
+      <div id="education-body"><div class="skeleton" aria-hidden="true"><i></i><i></i></div></div>
+      <div id="certifications-body"><div class="skeleton" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    </div>
+    <div id="contact-body" class="contact-block">
+      <!-- Static fallback so contact survives any hydration failure -->
+      <a href="mailto:krishnaharshap11@gmail.com">krishnaharshap11@gmail.com</a>
+      <a href="https://github.com/krishnaharshap" target="_blank" rel="noopener">github.com/krishnaharshap</a>
+      <a href="https://www.linkedin.com/in/krishna-p-472514236/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="footer-note mono">
+      Built and tested in the open.
+      <a href="https://github.com/krishnaharshap/professional-website-resume" target="_blank" rel="noopener">View source</a>
+      &middot; <span id="last-updated"></span>
+    </p>
+  </section>
+
+</main>
+
+<div id="data-error" class="data-error mono" hidden>
+  Some sections failed to load. The essentials are above; the full resume is in the
+  <a href="assets/Krishna_Puppala_Resume.pdf" download>PDF</a>.
+</div>
+
+<noscript>
+  <p class="noscript-note mono">JavaScript is off, so the detail sections stay empty.
+  The summary above and the resume PDF have everything.</p>
+</noscript>
+
 </body>
 </html>

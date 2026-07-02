@@ -1,250 +1,303 @@
-﻿{
-    "name": "Krishna Harsha Puppala",
-    "title": "Senior Quality Assurance Analyst",
-    "contact": {
-        "email": "krishnaharshap11@gmail.com",
-        "phone": "+1 (587) 409-6060",
-        "location": "Calgary, AB, Canada",
-        "linkedin": "",
-        "github": "https://github.com/krishnaharshap"
+{
+  "_schema": "Sections 2-6 of the site hydrate from this file. The hero (name, title, value prop, contact) is static in index.html; update both when identity fields change. Bump contentVersion in index.html (data-content-version) whenever this file changes so the CDN cache busts.",
+  "headlines": {
+    "skills": "Tooling chosen by risk, not fashion",
+    "experience": "Shipping insurance platforms without Sev-1s",
+    "experienceEarly": "Trained where defects cost recalls",
+    "projects": "Proof you can run",
+    "credentials": "Credentials and contact"
+  },
+  "skills": [
+    {
+      "category": "Test Automation",
+      "weight": 1,
+      "items": [
+        "Selenium WebDriver",
+        "Playwright (TypeScript, Python, Java)",
+        "Cucumber BDD (Gherkin)",
+        "TestNG",
+        "JUnit",
+        "PyTest",
+        "Appium",
+        "Page Object Model"
+      ]
     },
-    "summary": "Seasoned Quality Assurance Professional with proven expertise from high-velocity software automation to regulated Medical Device Validation, working across enterprise, healthcare, and cloud-based applications. Hands-on expertise in developing automation frameworks using Java, Python, Selenium, Playwright, Appium, TestNG, and Cucumber (BDD). Skilled in designing and executing functional, regression, integration, API, smoke, and performance tests across web, mobile, on-prem, and cloud platforms (Azure). Recognized for improving defect detection rates, reducing release cycle defects, investigating root cause analysis and optimizing automation coverage to accelerate delivery. Strong collaborator who partners seamlessly with development, product, design, DevOps, and business stakeholders to ensure high-quality, on-time releases. Demonstrates strong analytical, documentation, and problem-solving skills with a continuous-improvement mindset and exceptional attention to detail. Proficient in building risk-based test strategies, authoring detailed test plans, and implementing traceability matrices to ensure full end-to-end coverage for complex features and multi-system integrations. Adept at API validation and automation (Postman), performance testing (JMeter), and CI/CD integration using Jenkins, Git, and Maven. Leverages a strong foundation in regulated medical device verification and validation (V&V), including risk management, requirement traceability, and compliance-focused testing to drive software quality excellence.",
-    "skills": [
-        {
-            "category": "Automation Tools",
-            "items": [
-                "Selenium WebDriver",
-                "Playwright",
-                "Appium",
-                "Cypress",
-                "JMeter",
-                "Testim.io",
-                "BrowserStack"
-            ]
-        },
-        {
-            "category": "Programming Languages",
-            "items": [
-                "Java",
-                "Python",
-                "JavaScript",
-                "SQL"
-            ]
-        },
-        {
-            "category": "Testing Frameworks",
-            "items": [
-                "TestNG",
-                "Cucumber (BDD)",
-                "JUnit",
-                "Page Object Model (POM)",
-                "Hybrid Frameworks",
-                "Data-Driven Frameworks"
-            ]
-        },
-        {
-            "category": "CI/CD & DevOps",
-            "items": [
-                "Jenkins",
-                "Azure DevOps",
-                "Git",
-                "GitHub",
-                "BitBucket",
-                "Maven",
-                "Docker"
-            ]
-        },
-        {
-            "category": "Testing Methodologies",
-            "items": [
-                "Functional Testing",
-                "Regression Testing",
-                "Integration Testing",
-                "API Testing",
-                "Smoke Testing",
-                "Performance Testing",
-                "Load Testing",
-                "UAT",
-                "E2E Testing"
-            ]
-        },
-        {
-            "category": "Test Management & Defect Tracking",
-            "items": [
-                "JIRA",
-                "ServiceNow",
-                "HP ALM",
-                "qTest",
-                "TestRail"
-            ]
-        },
-        {
-            "category": "API & Database Testing",
-            "items": [
-                "Postman",
-                "REST APIs",
-                "MySQL",
-                "Microsoft SQL Server Management Studio"
-            ]
-        },
-        {
-            "category": "Platform & Environments",
-            "items": [
-                "Windows",
-                "Linux",
-                "Android",
-                "iOS",
-                "Azure Cloud",
-                "AWS"
-            ]
-        },
-        {
-            "category": "Regulatory & Compliance",
-            "items": [
-                "Medical Device V&V",
-                "FDA Design Controls",
-                "Risk Management",
-                "Requirement Traceability",
-                "CAPA Investigation"
-            ]
-        }
+    {
+      "category": "Regulated and Compliance",
+      "weight": 1,
+      "items": [
+        "Medical Device V&V",
+        "FDA Design Controls",
+        "Risk-Based Test Strategy",
+        "Requirement Traceability",
+        "CAPA Investigation",
+        "ISO QMS Frameworks"
+      ]
+    },
+    {
+      "category": "Languages and Data",
+      "weight": 2,
+      "items": [
+        "Java",
+        "Python",
+        "TypeScript / JavaScript",
+        "MS-SQL (complex queries, CTEs, joins)",
+        "Backend Reconciliation",
+        "Data Integrity Validation"
+      ]
+    },
+    {
+      "category": "API and Performance",
+      "weight": 2,
+      "items": [
+        "Postman",
+        "REST Assured",
+        "REST API Validation",
+        "JMeter",
+        "LoadRunner"
+      ]
+    },
+    {
+      "category": "CI/CD and Tooling",
+      "weight": 2,
+      "items": [
+        "Jenkins",
+        "GitHub Actions",
+        "Azure DevOps",
+        "Git / GitHub / Bitbucket",
+        "Maven",
+        "Docker",
+        "BrowserStack",
+        "Testim.io"
+      ]
+    },
+    {
+      "category": "AI-Assisted Testing",
+      "weight": 2,
+      "items": [
+        "AI-assisted test case generation",
+        "LLM-driven automation workflows (Claude, Copilot)",
+        "Flaky test triage and root cause analysis"
+      ]
+    },
+    {
+      "category": "Test Types",
+      "weight": 3,
+      "items": [
+        "Functional",
+        "Regression",
+        "Integration",
+        "End-to-End",
+        "API",
+        "Smoke",
+        "Performance and Load",
+        "Data Integrity",
+        "Exception Reporting",
+        "UAT"
+      ]
+    },
+    {
+      "category": "Test Management",
+      "weight": 3,
+      "items": [
+        "Jira",
+        "TestRail",
+        "Zephyr Squad",
+        "qTest",
+        "HP ALM",
+        "ServiceNow",
+        "Confluence"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "position": "QA Engineer (Internship)",
+      "company": "Walnut Insurance",
+      "location": "Calgary, AB",
+      "duration": "June 2026 - Present",
+      "metric": "Playwright-TypeScript framework, built from zero",
+      "responsibilities": [
+        "Building a Playwright-TypeScript automation framework from scratch, covering UI and API test scenarios for core insurance products",
+        "Applying AI-assisted test case generation to accelerate coverage for new product features while keeping every generated case traceable to an acceptance criterion"
+      ]
+    },
+    {
+      "type": "gap",
+      "position": "Full-time upskilling",
+      "company": "Southern Alberta Institute of Technology (SAIT)",
+      "location": "Calgary, AB",
+      "duration": "Dec 2025 - May 2026",
+      "metric": "IT Fundamentals Certificate",
+      "responsibilities": [
+        "Completed the Information Technology Fundamentals Certificate full-time: IT business analysis, project management, data concepts, digital solutioning, Python programming and data analytics, Agile project management"
+      ]
+    },
+    {
+      "position": "Senior Quality Assurance Analyst",
+      "company": "Sovereign General Insurance Company (SGIC)",
+      "location": "Calgary, AB",
+      "duration": "Dec 2023 - Nov 2025",
+      "metric": "Zero Sev-1 production defects across monthly releases",
+      "responsibilities": [
+        "Designed and executed 1,000+ manual and automated test cases against user stories and acceptance criteria, raising pre-release defect detection by roughly 30% through Selenium and Cucumber regression suites and cutting regression cycle time by about half",
+        "Led full testing effort as the sole QA in an Agile squad on a Tomcat-based web service front end, delivering stable monthly releases with zero Sev-1 production defects; critical defects caught pre-release in underwriting workflows were estimated by business operations to have avoided millions annually in underwriter rework",
+        "Wrote complex MS-SQL queries (CTEs, multi-table joins) to validate backend data accuracy and business rule compliance across policy rating engines and legacy AS400-integrated services, supporting reconciliation checks and defect root cause investigation",
+        "Performed REST API validation in Postman with scenario-based verification, payload validation, and response time analysis, sustaining about 99% integration reliability across interconnected enterprise applications",
+        "Integrated automated regression and smoke suites into Jenkins CI pipelines with pre-deployment quality gates, reducing production rollback incidents",
+        "Led initial test planning for legacy application server migrations from Windows Server 2016 to 2022, including validation of pre-production SQL Server database migrations"
+      ]
+    },
+    {
+      "position": "Senior Quality Assurance Analyst",
+      "company": "The AppLabb",
+      "clients": "Suncor Energy, Rise Health, Frank Mortgage",
+      "location": "Calgary, AB",
+      "duration": "Jan 2023 - Dec 2023",
+      "metric": "80% of defects caught before UAT",
+      "responsibilities": [
+        "Performed functional, integration, and API testing across enterprise web and cross-platform mobile applications, catching 80% of defects before UAT across client build cycles",
+        "Validated UI, API, and backend SQL data flows end to end for AI-enabled applications hosted on Microsoft Azure, including a mortgage broker platform with an AI chat interface",
+        "Managed the defect lifecycle in Jira and ServiceNow across onshore and offshore teams: logging, triage, retesting, impact analysis, and release validation",
+        "Automated mobile test execution with Testim.io and BrowserStack cloud devices, introduced Android simulators across OS versions, and maintained JMeter and LoadRunner performance scripts",
+        "Coordinated UAT cycles and release sign-offs, communicating testing risks and release blockers to product owners and business stakeholders"
+      ]
+    },
+    {
+      "position": "Quality Engineer (Verification & Validation)",
+      "company": "Fraank Systems",
+      "clients": "Baxter Healthcare, Roche Diagnostics, Mentor Worldwide",
+      "location": "United States",
+      "duration": "Dec 2018 - Sep 2021",
+      "metric": "Safety-critical devices under FDA design controls",
+      "responsibilities": [
+        "Executed verification, validation, and traceability activities for safety-critical medical devices in compliance with ISO quality standards and regulated QMS frameworks",
+        "Designed test protocols and executed validation cycles under FDA design control requirements, with reliability focus, risk assessment, and failure analysis",
+        "Built requirement traceability matrices and supported CAPA investigation documentation, collaborating with software, hardware, and QA teams on continuous quality improvement"
+      ]
+    },
+    {
+      "position": "Design Quality Engineer",
+      "company": "Vastek Group",
+      "clients": "Zimmer Biomet",
+      "location": "Warsaw, IN, United States",
+      "duration": "Mar 2017 - Dec 2018",
+      "metric": "Design verification in regulated manufacturing",
+      "responsibilities": [
+        "Performed design verification testing for electromechanical medical devices through a structured V&V lifecycle in a regulated manufacturing environment",
+        "Documented defect investigations and traceability reports linking requirements to validation outcomes, ensuring compliance with FDA and ISO standards through the product development lifecycle"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "selenium-cucumber-framework",
+      "outcome": "Cross-browser E2E suite with a live, public test report",
+      "description": "Java + Selenium 4 + Cucumber 7 BDD framework for an e-commerce demo app: Page Object Model, parallel cross-browser runs (Chrome, Firefox, Edge), Allure and Extent reporting, screenshot capture on failure, GitHub Actions and Jenkins pipelines.",
+      "technologies": "Java, Selenium, Cucumber, TestNG, Maven, Allure",
+      "link": "https://github.com/krishnaharshap/selenium-cucumber-framework",
+      "liveReport": "https://krishnaharshap.github.io/selenium-cucumber-framework/"
+    },
+    {
+      "name": "playwright-python-mcp",
+      "outcome": "Browser automation driven through the Playwright MCP server",
+      "description": "Python client that drives browser automation by talking to the official Playwright MCP server over stdio. Smoke tests against TodoMVC, unit tests plus optional live integration tests, GitHub Actions CI.",
+      "technologies": "Python, Playwright MCP, pytest, Node.js",
+      "link": "https://github.com/krishnaharshap/playwright-python-mcp"
+    },
+    {
+      "name": "ui-automation-parabank",
+      "outcome": "Banking demo UI suite with CI artifacts",
+      "description": "Playwright for Java + TestNG automation for the ParaBank banking app: login flows, form validation, headless smoke tests, Extent and Surefire reporting, GitHub Actions CI with artifact uploads.",
+      "technologies": "Java, Playwright, TestNG, Maven",
+      "link": "https://github.com/krishnaharshap/ui-automation-parabank"
+    },
+    {
+      "name": "docker-qa-demo",
+      "outcome": "Containerized QA tooling, ~20MB image",
+      "description": "Alpine-based Docker image demonstrating a full container lifecycle for QA tooling: build, tag, publish to GHCR, with OCI metadata labels and a container health validation script.",
+      "technologies": "Docker, Alpine, GHCR",
+      "link": "https://github.com/krishnaharshap/docker-qa-demo"
+    }
+  ],
+  "caseStudy": {
+    "title": "How this site is tested",
+    "intro": "This page is its own test subject. The strategy is risk-based: each risk maps to a spec, and CI runs the suite on every push.",
+    "rows": [
+      {
+        "risk": "Content drifts from the source resume",
+        "control": "content.spec asserts rendered sections against resume-data.json, including a banned-character scan"
+      },
+      {
+        "risk": "Navigation breaks on a browser I did not open",
+        "control": "Playwright runs Chromium, Firefox, and WebKit projects in CI on every push"
+      },
+      {
+        "risk": "Contrast or focus regressions ship silently",
+        "control": "a11y.spec runs axe-core checks plus keyboard traversal assertions"
+      },
+      {
+        "risk": "External links rot after the repo goes quiet",
+        "control": "A scheduled links workflow probes every external URL with per-host status policies, kept out of the PR gate so it cannot cry wolf"
+      },
+      {
+        "risk": "The print and PDF path degrades",
+        "control": "print.spec emulates print media and asserts all six sections render linearly"
+      }
     ],
-    "experience": [
-        {
-            "position": "Senior Quality Assurance Analyst",
-            "company": "Sovereign Insurance",
-            "location": "Calgary, AB, Canada",
-            "duration": "Dec 2023 - Nov 2025",
-            "responsibilities": [
-                "Led end-to-end QA testing for enterprise insurance platforms, ensuring quality releases for policy workflows in various legacy web applications",
-                "Designed and executed automated regression suites with over 1,000+ automated test cases across critical insurance modules, improving defect detection rate in pre-production by approximately 30% using Selenium and Cucumber, and reducing regression cycle time by approximately 50%",
-                "Led the full testing efforts as sole QA in an Agile team on Tomcat-based web service front-end (E2E, regression, smoke), based on monthly release cadence, while uncovering critical defects that saved the business operations millions annually in underwriters' time and resources, and delivered the project on schedule and within budget",
-                "Led initial test planning for enterprise legacy application server migrations from Windows Server 2016 to 2022, while actively participating in validation efforts of all pre-production databases inside SQL Server (Microsoft SQL Server Management Studio) migrations",
-                "Enhanced and maintained automated regression and smoke test suites using Selenium WebDriver with Cucumber BDD (Gherkin) in a Maven-based Java TestNG automation framework to validate a Springboot and Java PrimeFaces-based UI",
-                "Performed REST API validation using Postman, including scenario-based verification, payload validation, and response time analysis to ensure data integrity across modern policy rating engines and legacy AS400 systems",
-                "Collaborated in Agile teams to define acceptance criteria, triage defects, and support UAT sign-offs",
-                "Maintained and monitored Jenkins continuous integration (CI) pipelines by integrating automated test suites with build pipelines and providing quality gates before deployment"
-            ]
-        },
-        {
-            "position": "Senior Quality Assurance Analyst",
-            "company": "The AppLabb Inc.",
-            "location": "Calgary, AB, Canada",
-            "duration": "Jan 2023 - Dec 2023",
-            "responsibilities": [
-                "Performed functional, integration, and regression testing for cross-platform mobile applications, achieving 80% defect detection rate while collaborating with developers across build release cycles at Suncor Energy engagement",
-                "Led UAT cycles, documented defects in ServiceNow, and provided QA release sign-offs for multiple client projects",
-                "Evaluated and communicated the impact of scope changes from a timeline and QA risk perspective to leadership and stakeholders",
-                "Introduced simulators for mobile app testing on the Android platform for multiple OS versions, improving testing efficiency",
-                "Executed comprehensive test plans for mobile app platforms (iOS and Android) ensuring cross-platform compatibility",
-                "Worked closely with internal delivery teams, PMO, and business stakeholders to ensure successful delivery of projects by identifying and mitigating testing risks",
-                "Collaborated with QA SMEs, developers, and system architects to develop automation strategies and frameworks aligned with project requirements",
-                "Conducted backend database testing using MySQL, including validation of stored data, procedures, triggers, and jobs for internal corporate projects",
-                "Conducted regression testing on a mortgage broker application featuring an AI-enabled chatbox built on Microsoft Azure Portal Services, creating end-to-end test suites including UI, API, and data validation",
-                "Created and updated automation scripts to execute tests for mobile applications using Testim.io and BrowserStack cloud technologies",
-                "Updated and executed load and performance test plans and scripts using LoadRunner and JMeter to ensure application scalability",
-                "Piloted UAT activities for several application version releases and provided QA sign-off for business stakeholders"
-            ]
-        },
-        {
-            "position": "Quality Engineer (Verification & Validation)",
-            "company": "Fraank Systems",
-            "location": "United States",
-            "duration": "Dec 2018 - Sep 2021",
-            "responsibilities": [
-                "Conducted verification and validation of medical device systems focusing on reliability, risk assessment, and failure analysis for clients including Baxter Healthcare, Roche Diagnostics, and Mentor Worldwide",
-                "Designed test protocols and executed validation cycles ensuring compliance with FDA design control requirements and medical device regulations",
-                "Performed defect tracking, test traceability matrix creation, and supported CAPA (Corrective and Preventive Action) investigation documentation",
-                "Collaborated with cross-functional software, hardware, and QA teams to evaluate test results and drive continuous improvements in product quality",
-                "Ensured all testing activities aligned with regulatory standards and quality system requirements for medical device manufacturing"
-            ]
-        },
-        {
-            "position": "Design Quality Engineer (Medical Device Manufacturing)",
-            "company": "Vastek Inc.",
-            "location": "Warsaw, IN, United States",
-            "duration": "Mar 2017 - Dec 2018",
-            "responsibilities": [
-                "Performed design verification testing for electromechanical medical devices following structured V&V lifecycle for Zimmer Biomet client projects",
-                "Executed test cases, documented defects, and ensured alignment with regulatory and quality system requirements throughout the product development lifecycle",
-                "Assisted in test report documentation and traceability linking requirements to validation outcomes to ensure comprehensive coverage",
-                "Supported quality assurance activities in a regulated medical device manufacturing environment, ensuring compliance with FDA and ISO standards"
-            ]
-        }
-    ],
-    "projects": [
-        {
-            "name": "Selenium Cucumber Framework",
-            "description": "Developed a Java + Selenium + Cucumber BDD test-automation framework to validate web applications end-to-end",
-            "technologies": "Java, Selenium WebDriver, Cucumber BDD, TestNG, Maven",
-            "link": "https://github.com/krishnaharshap"
-        },
-        {
-            "name": "Playwright Python MCP",
-            "description": "Built a Python + Playwright test automation suite integrating UI and API testing with CI/CD workflows",
-            "technologies": "Python, Playwright, API Testing, CI/CD",
-            "link": "https://github.com/krishnaharshap"
-        },
-        {
-            "name": "Docker QA Demo",
-            "description": "Authored a Docker-based QA demo project for containerized test environments, improving reproducibility of test runs",
-            "technologies": "Docker, Containerization, Test Automation",
-            "link": "https://github.com/krishnaharshap"
-        }
-    ],
-    "education": [
-        {
-            "degree": "Master of Science in Engineering Management",
-            "institution": "Missouri State University",
-            "location": "United States",
-            "year": "2014 - 2016"
-        },
-        {
-            "degree": "Bachelor of Technology in Mechanical Engineering",
-            "institution": "National Institute of Technology (NIT) Warangal",
-            "location": "India",
-            "year": "2008 - 2012"
-        }
-    ],
-    "certifications": [
-        {
-            "name": "Information Technology Fundamentals Certificate",
-            "issuer": "Southern Alberta Institute of Technology (SAIT), Calgary",
-            "year": "May 2026",
-            "details": [
-                "IT Business Analysis",
-                "Project Management Essentials",
-                "Data Concepts",
-                "Digital Solutioning",
-                "Introduction to Python Programming",
-                "Agile Project Management",
-                "Programming with Python",
-                "Python and Data Analytics"
-            ]
-        },
-        {
-            "name": "CCIS IT Bridging Program Employment Skills Training",
-            "issuer": "",
-            "year": "Apr 2026",
-            "details": []
-        },
-        {
-            "name": "ISTQB Certified Tester - Foundation Level (CTFL)",
-            "issuer": "International Software Testing Qualifications Board",
-            "year": "2023",
-            "details": []
-        },
-        {
-            "name": "AWS Certified Cloud Practitioner (CCP)",
-            "issuer": "Amazon Web Services",
-            "year": "2024",
-            "details": []
-        },
-        {
-            "name": "GitHub Foundations",
-            "issuer": "GitHub",
-            "year": "2025",
-            "details": []
-        }
-    ]
+    "links": {
+      "workflow": "https://github.com/krishnaharshap/professional-website-resume/actions",
+      "tests": "https://github.com/krishnaharshap/professional-website-resume/tree/main/tests",
+      "allure": "https://krishnaharshap.github.io/selenium-cucumber-framework/"
+    }
+  },
+  "education": [
+    {
+      "degree": "Master of Science in Engineering Management",
+      "institution": "Missouri State University",
+      "location": "United States",
+      "year": "2014 - 2016"
+    },
+    {
+      "degree": "Bachelor of Technology in Mechanical Engineering",
+      "institution": "National Institute of Technology (NIT) Warangal",
+      "location": "India",
+      "year": "2008 - 2012"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Information Technology Fundamentals Certificate",
+      "issuer": "Southern Alberta Institute of Technology (SAIT), Calgary",
+      "year": "2026"
+    },
+    {
+      "name": "CCIS IT Bridging Program, Employment Skills Training",
+      "issuer": "Calgary Catholic Immigration Society",
+      "year": "2026"
+    },
+    {
+      "name": "GitHub Foundations (GH-900)",
+      "issuer": "GitHub",
+      "year": "2025"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner (CLF-C02)",
+      "issuer": "Amazon Web Services",
+      "year": "2024"
+    },
+    {
+      "name": "ISTQB Certified Tester, Foundation Level (CTFL)",
+      "issuer": "International Software Testing Qualifications Board",
+      "year": "2024"
+    }
+  ],
+  "contact": {
+    "email": "krishnaharshap11@gmail.com",
+    "phone": "(587) 409-6060",
+    "location": "Calgary, AB, Canada",
+    "linkedin": "https://www.linkedin.com/in/krishna-p-472514236/",
+    "github": "https://github.com/krishnaharshap",
+    "source": "https://github.com/krishnaharshap/professional-website-resume"
+  }
 }
