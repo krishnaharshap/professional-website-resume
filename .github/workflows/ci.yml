@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Playwright (3 browsers)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npx playwright test
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+  lighthouse:
+    name: Lighthouse budgets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Serve and audit
+        run: |
+          npx serve -l 4173 --no-clipboard . &
+          npx wait-on http://localhost:4173 --timeout 30000 || sleep 5
+          npx --yes lighthouse http://localhost:4173 \
+            --quiet --chrome-flags="--headless --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=./lighthouse.json
+      - name: Enforce budgets (perf >= 0.90, a11y >= 0.95)
+        run: |
+          node -e '
+            const report = require("./lighthouse.json");
+            const scores = Object.fromEntries(
+              Object.entries(report.categories).map(([key, category]) => [key, category.score])
+            );
+            console.log(scores);
+            if (scores.performance < 0.90) throw new Error("performance " + scores.performance + " < 0.90");
+            if (scores.accessibility < 0.95) throw new Error("accessibility " + scores.accessibility + " < 0.95");
+          '
