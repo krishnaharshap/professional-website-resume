@@ -32,12 +32,16 @@ test.describe("accessibility", () => {
     await page.keyboard.press("Tab");
     await expect(page.locator(".skip-link")).toBeFocused();
 
-    // Arrow keys traverse all six sections; focus follows navigation
+    // Arrow keys traverse all six sections; focus follows navigation.
+    // Each press waits for the hash to update before the next: the nav
+    // debounces during smooth-scroll, so firing all five in a tight loop
+    // races the same lock a real user hitting the key too fast would.
     await page.locator("body").click({ position: { x: 5, y: 5 } });
-    for (let i = 0; i < 5; i++) {
+    const sections = ["skills", "experience", "experience-early", "projects", "credentials"];
+    for (const section of sections) {
       await page.keyboard.press("ArrowRight");
+      await expect.poll(() => page.url()).toContain("#" + section);
     }
-    await expect.poll(() => page.url()).toContain("#credentials");
     await expect(page.locator("#credentials")).toBeFocused();
   });
 
