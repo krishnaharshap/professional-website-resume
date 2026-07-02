@@ -48,7 +48,7 @@ jobs:
           npx serve -l 4173 --no-clipboard . &
           npx wait-on http://localhost:4173 --timeout 30000 || sleep 5
           npx --yes lighthouse http://localhost:4173 \
-            --quiet --chrome-flags="--headless --no-sandbox" \
+            --quiet --chrome-flags="--headless --no-sandbox" --preset=desktop \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json --output-path=./lighthouse.json
       - name: Enforce budgets (perf >= 0.90, a11y >= 0.95)
