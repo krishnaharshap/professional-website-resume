@@ -1,0 +1,29 @@
+# Weekly link-rot check against the LIVE site. Deliberately not a PR gate:
+# external hosts rate-limit and rot on their own schedule.
+# Note: GitHub disables cron workflows after 60 days of repo inactivity;
+# workflow_dispatch stays available (see README).
+name: Link check
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx playwright test --grep "@links" --project=chromium
+        env:
+          RUN_LINKS: "1"
+          BASE_URL: https://krishnaharshap.github.io/professional-website-resume/

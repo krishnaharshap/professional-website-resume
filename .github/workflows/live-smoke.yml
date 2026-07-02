@@ -1,0 +1,33 @@
+# Smoke-tests the LIVE URL after GitHub Pages finishes deploying, instead of
+# racing the CDN on push. Also runnable by hand.
+name: Live smoke
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - name: Smoke against production
+        run: npx playwright test content.spec.ts nav.spec.ts --project=chromium
+        env:
+          BASE_URL: https://krishnaharshap.github.io/professional-website-resume/
+      - name: 404 path serves the custom page
+        run: |
+          body=$(curl -s https://krishnaharshap.github.io/professional-website-resume/definitely-missing/)
+          echo "$body" | grep -q "failed the smoke test" || { echo "custom 404 not served"; exit 1; }
