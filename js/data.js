@@ -142,13 +142,18 @@ export async function hydrate() {
     if (data.contact) {
       const host = document.getElementById("contact-body");
       if (host) {
-        host.replaceChildren(
+        const primary = el("div", "contact-primary");
+        primary.append(
           link("mailto:" + data.contact.email, data.contact.email, { external: false }),
-          el("span", "mono", data.contact.phone),
+          el("span", "mono", data.contact.phone)
+        );
+        const secondary = el("div", "contact-secondary");
+        secondary.append(
           el("span", "mono", data.contact.location),
           link(data.contact.github, "GitHub"),
           link(data.contact.linkedin, "LinkedIn")
         );
+        host.replaceChildren(primary, secondary);
       }
     }
 
