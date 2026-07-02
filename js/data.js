@@ -99,6 +99,12 @@ function renderCaseStudy(caseStudy) {
     line.append(el("span", "control", row.control));
     box.append(line);
   });
+  if (caseStudy.links) {
+    const footer = el("div", "case-links");
+    if (caseStudy.links.tests) footer.append(link(caseStudy.links.tests, "See the tests"));
+    if (caseStudy.links.workflow) footer.append(link(caseStudy.links.workflow, "See it run"));
+    box.append(footer);
+  }
   return box;
 }
 
