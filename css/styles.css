@@ -2,6 +2,32 @@
    Purple discipline: accent only (eyebrows, links, rules, active dot).
    No gradients, no icon circles, no decorative shadows, no uniform radius. */
 
+/* Self-hosted fonts: avoids the fonts.googleapis.com + fonts.gstatic.com
+   round trips that were the largest contributor to first paint time. */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-sans-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-500.woff2") format("woff2");
+}
+
 :root,
 html[data-theme="light"] {
   --bg: #faf9fc;
