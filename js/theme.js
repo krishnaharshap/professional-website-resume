@@ -7,7 +7,7 @@ function storedTheme() {
 function applyTheme(theme, persist) {
   document.documentElement.setAttribute("data-theme", theme);
   const button = document.getElementById("theme-toggle");
-  if (button) button.textContent = "theme: " + theme;
+  if (button) button.textContent = "Theme: " + theme.charAt(0).toUpperCase() + theme.slice(1);
   if (persist) {
     try { localStorage.setItem(STORAGE_KEY, theme); } catch { /* session-only */ }
   }

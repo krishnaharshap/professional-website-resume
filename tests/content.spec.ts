@@ -9,7 +9,7 @@ test.describe("content", () => {
     });
     await page.goto("./");
 
-    await expect(page.locator("h1")).toHaveText("Krishna Puppala");
+    await expect(page.locator("h1")).toHaveText("Krishna Harsha Puppala");
     await expect(page.locator(".hero .eyebrow")).toContainText("QA ENGINEER / SDET");
     await expect(page.locator(".value-prop")).toContainText("Walnut Insurance");
     await expect(page.locator(".value-prop")).toContainText("risk");
@@ -37,15 +37,16 @@ test.describe("content", () => {
     await expect(experience).toContainText("Sovereign General Insurance Company");
     await expect(experience.locator(".exp-metric").first()).toBeAttached();
 
-    // Gap entry sits inline in the timeline
-    await expect(experience).toContainText("Southern Alberta Institute of Technology");
+    // Gap entry sits inline in the timeline; AppLabb belongs to software QA
+    await expect(experience).toContainText("CCIS IT Bridging Program and SAIT");
+    await expect(experience).toContainText("The AppLabb");
 
-    // Earlier + regulated experience
+    // Regulated manufacturing QE experience
     const early = page.locator("#experience-early-body");
-    await expect(early).toContainText("The AppLabb");
     await expect(early).toContainText("Fraank Systems");
     await expect(early).toContainText("Vastek Group");
     await expect(early).toContainText("Zimmer Biomet");
+    await expect(early).not.toContainText("The AppLabb");
 
     // Projects: real repo URLs, one card per project
     const projects = page.locator("#projects-body .project-card");
@@ -56,7 +57,8 @@ test.describe("content", () => {
     await expect(page.locator("#case-study .case-row")).toHaveCount(5);
 
     // Credentials + contact
-    await expect(page.locator("#education-body")).toContainText("Missouri State University");
+    await expect(page.locator("#education-body")).toContainText("Materials Science");
+    await expect(page.locator("#education-body")).toContainText("Metallurgical & Materials Engineering");
     await expect(page.locator("#certifications-body")).toContainText("ISTQB");
     await expect(page.locator("#contact-body")).toContainText("(587) 409-6060");
     await expect(page.locator("#last-updated")).toContainText("content v");
@@ -81,7 +83,7 @@ test.describe("content", () => {
 
     await expect(page.locator("#data-error")).toBeVisible();
     await expect(page.locator(".skeleton")).toHaveCount(0);
-    await expect(page.locator("h1")).toHaveText("Krishna Puppala");
+    await expect(page.locator("h1")).toHaveText("Krishna Harsha Puppala");
     await expect(page.locator("#contact-body a[href^='mailto:']")).toBeAttached();
     // Section count stays stable: dots and hashes must not renumber.
     await expect(page.locator("main .slide")).toHaveCount(6);

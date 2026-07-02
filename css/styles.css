@@ -109,34 +109,27 @@ a:hover { text-decoration-thickness: 2px; }
   html { scroll-snap-type: none; }
 }
 
-/* ---- top bar ---- */
-
-.top-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem clamp(1rem, 3vw, 2rem);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
-  z-index: 10;
-}
-
-.top-brand { font-size: 0.8125rem; color: var(--text-2); }
+/* ---- theme toggle (fixed top-right, no bar) ---- */
 
 .theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 10;
   font-size: 0.8125rem;
-  background: none;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--text);
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem 0.9rem;
   cursor: pointer;
-  min-height: 32px;
+  min-height: 44px;
 }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Print-only resume-style contact header under the name */
+.print-contact { display: none; }
 
 .skip-link {
   position: absolute;
@@ -410,8 +403,14 @@ a:hover { text-decoration-thickness: 2px; }
     --accent: #4c1d95; --accent-2: #4c1d95; --border: #cccccc; --skeleton: #ffffff;
   }
   html { scroll-snap-type: none; }
-  .top-bar, .dot-rail, .kbd-hint, .skip-link, .tested-strip,
+  .theme-toggle, .dot-rail, .kbd-hint, .skip-link, .tested-strip,
   .data-error, .noscript-note, .skeleton { display: none !important; }
+  .print-contact {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-2);
+    margin-bottom: 1.5rem;
+  }
   .slide {
     min-height: auto;
     padding: 1.2cm 0;
@@ -422,10 +421,4 @@ a:hover { text-decoration-thickness: 2px; }
   .hero > * { animation: none !important; }
   a { color: var(--accent); }
   .hero-links a[href$=".pdf"] { display: none; }
-  .contact-block a[href^="http"]::after,
-  .hero-links a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.75em;
-    color: var(--text-2);
-  }
 }

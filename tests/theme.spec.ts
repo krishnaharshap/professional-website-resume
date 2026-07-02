@@ -10,7 +10,7 @@ test.describe("theme", () => {
     const page = await context.newPage();
     await page.goto("./");
     expect(await currentTheme(page)).toBe("dark");
-    await expect(page.locator("#theme-toggle")).toHaveText("theme: dark");
+    await expect(page.locator("#theme-toggle")).toHaveText("Theme: Dark");
     await context.close();
   });
 
@@ -21,7 +21,8 @@ test.describe("theme", () => {
 
     await page.locator("#theme-toggle").click();
     expect(await currentTheme(page)).toBe(flipped);
-    await expect(page.locator("#theme-toggle")).toHaveText("theme: " + flipped);
+    const label = "Theme: " + flipped.charAt(0).toUpperCase() + flipped.slice(1);
+    await expect(page.locator("#theme-toggle")).toHaveText(label);
 
     await page.reload();
     expect(await currentTheme(page)).toBe(flipped);

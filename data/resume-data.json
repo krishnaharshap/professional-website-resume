@@ -125,12 +125,13 @@
     {
       "type": "gap",
       "position": "Full-time upskilling",
-      "company": "Southern Alberta Institute of Technology (SAIT)",
+      "company": "CCIS IT Bridging Program and SAIT",
       "location": "Calgary, AB",
-      "duration": "Dec 2025 - May 2026",
-      "metric": "IT Fundamentals Certificate",
+      "duration": "Feb 2026 - May 2026",
+      "metric": "Two IT programs, back to back",
       "responsibilities": [
-        "Completed the Information Technology Fundamentals Certificate full-time: IT business analysis, project management, data concepts, digital solutioning, Python programming and data analytics, Agile project management"
+        "Completed the CCIS IT Bridging Program employment skills training (Feb - Apr 2026)",
+        "Completed the SAIT Information Technology Fundamentals Certificate (Apr - May 2026): IT business analysis, project management, data concepts, digital solutioning, Python programming and data analytics, Agile project management"
       ]
     },
     {
@@ -253,13 +254,13 @@
   },
   "education": [
     {
-      "degree": "Master of Science in Engineering Management",
+      "degree": "Master of Science in Materials Science",
       "institution": "Missouri State University",
       "location": "United States",
       "year": "2014 - 2016"
     },
     {
-      "degree": "Bachelor of Technology in Mechanical Engineering",
+      "degree": "Bachelor of Technology in Metallurgical & Materials Engineering",
       "institution": "National Institute of Technology (NIT) Warangal",
       "location": "India",
       "year": "2008 - 2012"
@@ -269,12 +270,12 @@
     {
       "name": "Information Technology Fundamentals Certificate",
       "issuer": "Southern Alberta Institute of Technology (SAIT), Calgary",
-      "year": "2026"
+      "year": "Apr - May 2026"
     },
     {
       "name": "CCIS IT Bridging Program, Employment Skills Training",
       "issuer": "Calgary Catholic Immigration Society",
-      "year": "2026"
+      "year": "Feb - Apr 2026"
     },
     {
       "name": "GitHub Foundations (GH-900)",
