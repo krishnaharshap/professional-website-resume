@@ -5,9 +5,10 @@
 
 const ALLOWED_PROTOCOLS = ["https:", "mailto:"];
 
-// Entries before this index render in #experience-body, the rest in
-// #experience-early-body (current insurance QE vs earlier and regulated QE).
-const EXPERIENCE_SPLIT_INDEX = 3;
+// Entries before this index render in #experience-body (software QA,
+// 2023 - present: Walnut, upskilling, SGIC, AppLabb), the rest in
+// #experience-early-body (regulated manufacturing QE, 2017 - 2021).
+const EXPERIENCE_SPLIT_INDEX = 4;
 
 function safeUrl(url) {
   try {

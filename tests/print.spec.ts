@@ -13,7 +13,7 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
     await page.emulateMedia({ media: "print" });
 
     // Nav chrome and interactive-only elements disappear
-    for (const selector of [".top-bar", ".dot-rail", ".kbd-hint", ".tested-strip"]) {
+    for (const selector of [".theme-toggle", ".dot-rail", ".kbd-hint", ".tested-strip"]) {
       const display = await page
         .locator(selector)
         .first()
@@ -21,10 +21,17 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
       expect(display, `${selector} in print`).toBe("none");
     }
 
+    // Resume-style contact header becomes visible in print only
+    const contactDisplay = await page
+      .locator(".print-contact")
+      .evaluate((node) => getComputedStyle(node).display);
+    expect(contactDisplay).toBe("block");
+    await expect(page.locator(".print-contact")).toContainText("(587) 409-6060");
+
     // All six sections keep their content in the flow
     await expect(page.locator("main .slide")).toHaveCount(6);
     for (const heading of [
-      "Krishna Puppala",
+      "Krishna Harsha Puppala",
       "Tooling chosen by risk, not fashion",
       "Shipping insurance platforms without Sev-1s",
       "Trained where defects cost recalls",
