@@ -24,3 +24,7 @@ playwright-report/
 lighthouse.json
 
 bootstrap-resume.ps1
+
+# Internal AI-planning artifacts (not reader-facing docs)
+PLAN.md
+TODOS.md
