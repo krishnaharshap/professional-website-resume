@@ -27,6 +27,8 @@ claim.
   IBM Plex Sans/Mono, snap sections, print stylesheet, reduced motion
 - `js/main.js` - bootstrap order contract: theme (inline, pre-paint), nav
   (static DOM, never waits on data), then hydration
+- `js/theme.js` - toggle button, localStorage persistence, follows OS
+  `prefers-color-scheme` changes only while no explicit choice is stored
 - `js/data.js` - fetches `data/resume-data.json`, renders with
   createElement/textContent only, URL protocol allowlist, graceful fallback
 - `js/nav.js` - keyboard section jumps, dot rail, IntersectionObserver hash
