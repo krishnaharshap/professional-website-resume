@@ -392,6 +392,101 @@ a:hover { text-decoration-thickness: 2px; }
 
 .footer-note { font-size: 0.78rem; color: var(--text-2); }
 
+/* ---- insights ----
+   Every value below comes from an existing token. No new colors, no gradients,
+   no shadows, no card radius - the charts obey the same rules as the rest of
+   the page, which is why they read as part of it rather than bolted on.
+   Series are separated by weight and opacity, never by hue. */
+
+/* .slide sets display:flex, so hiding needs the extra attribute specificity. */
+.slide[hidden] { display: none; }
+
+.chart { margin: 0 0 1.75rem; }
+.chart-title {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.chart-svg { width: 100%; height: clamp(120px, 18vh, 180px); display: block; }
+.spark-svg { width: 100%; height: 40px; display: block; }
+
+.chart-axis { stroke: var(--border); stroke-width: 1; }
+.chart-line-mean { fill: none; stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.chart-line-raw  { fill: none; stroke: var(--accent); stroke-width: 1; opacity: 0.25; vector-effect: non-scaling-stroke; }
+.chart-label { fill: var(--text-2); font-size: 11px; }
+
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.25rem 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+.kpi-label { font-size: 0.75rem; color: var(--text-2); letter-spacing: 0.06em; }
+.kpi-value { font-size: 1.6rem; color: var(--accent); line-height: 1.2; margin: 0.15rem 0 0; }
+.kpi-hint { font-size: 0.72rem; color: var(--text-2); margin-top: 0.15rem; }
+
+/* Mirrors .skills-columns so the grid rhythm matches the rest of the deck. */
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem 2rem;
+  margin-bottom: 2rem;
+}
+.source-cell { border-top: 1px solid var(--border); padding-top: 0.6rem; }
+.source-key { font-size: 0.75rem; color: var(--text-2); letter-spacing: 0.06em; }
+.source-total { font-size: 1.1rem; color: var(--accent); display: block; margin: 0.1rem 0 0.3rem; }
+
+.funnel { list-style: none; padding: 0; }
+.funnel-step {
+  display: grid;
+  grid-template-columns: minmax(80px, 8rem) 1fr 3.5rem;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid var(--border);
+  padding: 0.55rem 0;
+}
+.funnel-step:last-child { border-bottom: 1px solid var(--border); }
+.funnel-label { font-size: 0.8125rem; color: var(--text-2); }
+.funnel-track { display: block; height: 6px; background: var(--skeleton); }
+.funnel-fill { display: block; height: 100%; background: var(--accent); }
+.funnel-value { font-size: 0.8125rem; color: var(--accent); text-align: right; }
+
+/* Deliberately not .value-prop: that class is the hero's, and the specs match
+   it in strict mode expecting exactly one on the page. */
+.insights-intro {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  color: var(--text-2);
+  max-width: 62ch;
+  margin-bottom: 1.75rem;
+}
+
+.insights-gate { font-size: 0.8125rem; color: var(--text-2); }
+.insights-note {
+  font-size: 0.72rem;
+  color: var(--text-2);
+  max-width: 68ch;
+  margin-top: 1.5rem;
+}
+
+/* Stale data is shown as stale rather than passed off as current. */
+#insights.is-stale .chart-line-mean,
+#insights.is-stale .funnel-fill,
+#insights.is-stale .kpi-value { opacity: 0.45; }
+#insights.is-stale .insights-note::before {
+  content: "Data is more than 48 hours old. ";
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .funnel-step { grid-template-columns: minmax(64px, 6rem) 1fr 3rem; gap: 0.6rem; }
+  .kpi-value { font-size: 1.35rem; }
+}
+
 /* ---- skeletons (pre-hydration) ---- */
 
 .skeleton { display: grid; gap: 0.9rem; max-width: 680px; }
@@ -441,6 +536,8 @@ a:hover { text-decoration-thickness: 2px; }
     --accent: #4c1d95; --accent-2: #4c1d95; --border: #cccccc; --skeleton: #ffffff;
   }
   html { scroll-snap-type: none; }
+  /* Print is the resume. Nobody printing it wants my traffic charts. */
+  #insights,
   .theme-toggle, .dot-rail, .kbd-hint, .skip-link, .case-links,
   .contact-block, .data-error, .noscript-note, .skeleton { display: none !important; }
   .print-contact {
