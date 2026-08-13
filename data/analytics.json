@@ -1,0 +1,4 @@
+{
+  "generatedAt": null,
+  "note": "Seed file. Replaced by .github/workflows/analytics.yml once the collector is deployed. generatedAt null fails validation in js/insights.js on purpose, so #insights stays hidden until there is real data."
+}

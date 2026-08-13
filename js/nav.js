@@ -42,6 +42,13 @@ function setActive(index) {
     if (i === index) dot.setAttribute("aria-current", "true");
     else dot.removeAttribute("aria-current");
   });
+  // Single choke point for "the visible section changed", so anything that
+  // needs to know can listen instead of running a second IntersectionObserver.
+  document.dispatchEvent(
+    new CustomEvent("nav:section", {
+      detail: { index, id: sections[index]?.id ?? null },
+    })
+  );
 }
 
 function goTo(index, { push = true, focus = true } = {}) {
@@ -87,28 +94,69 @@ function onKeyDown(event) {
   }
 }
 
+let observer = null;
+const observed = new WeakSet();
+
 function observeSections() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const index = sections.indexOf(entry.target);
-        if (index === -1) continue;
-        setActive(index);
-        if (!navigating) {
-          const hash = "#" + entry.target.id;
-          if (window.location.hash !== hash) history.replaceState(null, "", hash);
+  if (!observer) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const index = sections.indexOf(entry.target);
+          if (index === -1) continue;
+          setActive(index);
+          if (!navigating) {
+            const hash = "#" + entry.target.id;
+            if (window.location.hash !== hash) history.replaceState(null, "", hash);
+          }
         }
-      }
-    },
-    { threshold: 0.55 }
-  );
-  sections.forEach((section) => observer.observe(section));
+      },
+      { threshold: 0.55 }
+    );
+  }
+  sections.forEach((section) => {
+    if (observed.has(section)) return;
+    observed.add(section);
+    observer.observe(section);
+  });
+}
+
+function bindDot(dot) {
+  if (dot.dataset.navBound) return;
+  dot.dataset.navBound = "1";
+  dot.addEventListener("click", (event) => {
+    event.preventDefault();
+    goTo(sectionIndexFromHash(dot.getAttribute("href")));
+  });
+}
+
+// Hidden sections are excluded so arrow keys and the dot rail never land on
+// something the visitor cannot see.
+function collect() {
+  sections = Array.from(document.querySelectorAll("main .slide:not([hidden])"));
+  dots = Array.from(document.querySelectorAll("li:not([hidden]) .dot"));
+}
+
+/**
+ * Re-read the deck after a section is shown or hidden. Nav initializes against
+ * the static DOM and cannot wait on data, so a section that reveals itself
+ * later has to announce that rather than be silently missing from navigation.
+ */
+export function refreshNav() {
+  if (sections.length === 0) return;
+  const currentId = sections[activeIndex]?.id ?? null;
+  collect();
+  dots.forEach(bindDot);
+  observeSections();
+
+  const index = currentId ? sections.findIndex((s) => s.id === currentId) : -1;
+  activeIndex = index === -1 ? 0 : index;
+  setActive(activeIndex);
 }
 
 export function initNav() {
-  sections = Array.from(document.querySelectorAll("main .slide"));
-  dots = Array.from(document.querySelectorAll(".dot"));
+  collect();
   if (sections.length === 0) return;
 
   history.scrollRestoration = "manual";
@@ -118,13 +166,7 @@ export function initNav() {
     history.replaceState(null, "", LEGACY_HASH_MAP[window.location.hash]);
   }
 
-  dots.forEach((dot) => {
-    dot.addEventListener("click", (event) => {
-      event.preventDefault();
-      const index = sectionIndexFromHash(dot.getAttribute("href"));
-      goTo(index);
-    });
-  });
+  dots.forEach(bindDot);
 
   document.addEventListener("keydown", onKeyDown);
 

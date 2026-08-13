@@ -54,6 +54,7 @@
     <li><a href="#experience" class="dot" data-section="experience"><span class="dot-label mono">Experience</span></a></li>
     <li><a href="#experience-early" class="dot" data-section="experience-early"><span class="dot-label mono">Regulated QE</span></a></li>
     <li><a href="#projects" class="dot" data-section="projects"><span class="dot-label mono">Projects</span></a></li>
+    <li hidden data-dot-for="insights"><a href="#insights" class="dot" data-section="insights"><span class="dot-label mono">Insights</span></a></li>
     <li><a href="#credentials" class="dot" data-section="credentials"><span class="dot-label mono">Contact</span></a></li>
   </ul>
 </nav>
@@ -114,6 +115,22 @@
       <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i></div>
     </div>
     <div id="case-study"></div>
+  </section>
+
+  <!-- Hidden until the data loads. Unlike every other section this one has no
+       static fallback, because there is nothing honest to show without data.
+       js/insights.js reveals it or leaves it hidden. -->
+  <section class="slide" id="insights" tabindex="-1" aria-label="Site analytics" hidden>
+    <p class="eyebrow mono">INSTRUMENTATION &middot; THIS SITE, MEASURED</p>
+    <h2>What this page actually does</h2>
+    <p class="insights-intro">
+      Collected first-party by a Cloudflare Worker I wrote. No cookies, no IP
+      addresses, no third-party scripts.
+    </p>
+    <!-- No skeleton here. A skeleton promises content is arriving; this section
+         stays hidden unless real data exists, so there is nothing to promise. -->
+    <div id="insights-body"></div>
+    <p class="insights-note mono" id="insights-note"></p>
   </section>
 
   <section class="slide" id="credentials" tabindex="-1" aria-label="Credentials and contact">
