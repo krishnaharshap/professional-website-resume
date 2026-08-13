@@ -1,0 +1,80 @@
+# Pulls the published summary from the portfolio-analytics repo and commits a
+# reshaped copy for js/insights.js to read.
+#
+# All aggregation, k-anonymity suppression, and the anomaly/integrity gate
+# happen exactly once, upstream, in portfolio-analytics. This workflow does not
+# call the collector Worker directly and does not re-derive any number - it
+# only fetches the already-published result and reshapes field names.
+#
+# portfolio-analytics is currently private, so the summary is pulled via a
+# second actions/checkout using a fine-grained PAT scoped to Contents: read on
+# that one repo, rather than a public Pages fetch. If that repo is ever made
+# public, this can switch to a plain curl against its Pages URL and the PAT can
+# be revoked.
+#
+# Runs after the upstream repo's own collect job (06:00 UTC) so it reads
+# settled data rather than racing it.
+# Note: GitHub disables cron workflows after 60 days of repo inactivity;
+# workflow_dispatch stays available (see README).
+name: Publish analytics
+
+on:
+  schedule:
+    - cron: "45 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never add pull_request_target to this repo. It is the one trigger that would
+# expose ANALYTICS_REPO_TOKEN to a fork PR.
+
+concurrency:
+  group: publish-analytics
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Check out the analytics repo's published summary
+        id: fetch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        continue-on-error: true
+        with:
+          repository: krishnaharshap/portfolio-analytics
+          token: ${{ secrets.ANALYTICS_REPO_TOKEN }}
+          sparse-checkout: |
+            site/summary.json
+          sparse-checkout-cone-mode: false
+          path: analytics-src
+
+      - name: Skip cleanly when the upstream repo is not wired up yet
+        if: steps.fetch.outcome == 'failure'
+        run: echo "ANALYTICS_REPO_TOKEN missing or upstream not reachable yet. Nothing to publish."
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        if: steps.fetch.outcome == 'success'
+        with:
+          node-version: 22
+
+      - name: Reshape the upstream summary
+        if: steps.fetch.outcome == 'success'
+        run: node scripts/adapt-analytics.mjs analytics-src/site/summary.json data/analytics.json
+
+      - name: Commit only when the data changed
+        if: steps.fetch.outcome == 'success'
+        run: |
+          set -euo pipefail
+          rm -rf analytics-src
+          if git diff --quiet -- data/analytics.json; then
+            echo "No change to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/analytics.json
+          git commit -m "chore: update site analytics"
+          git push

@@ -92,6 +92,8 @@ test.describe("content", () => {
     await expect(page.locator("h1")).toHaveText("Krishna Harsha Puppala");
     await expect(page.locator("#contact-body a[href^='mailto:']")).toBeAttached();
     // Section count stays stable: dots and hashes must not renumber.
-    await expect(page.locator("main .slide")).toHaveCount(6);
+    // 7 since #insights joined the deck; it ships hidden and only reveals when
+    // data/analytics.json validates, so hydration failure still cannot move it.
+    await expect(page.locator("main .slide")).toHaveCount(7);
   });
 });

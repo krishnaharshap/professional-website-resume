@@ -14,7 +14,9 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
 
     // Nav chrome, interactive-only elements, and the on-screen contact
     // block disappear (contact appears exactly once in print: the header).
-    for (const selector of [".theme-toggle", ".dot-rail", ".kbd-hint", ".case-links", ".contact-block"]) {
+    // #insights joins this list: print is the resume, and nobody printing it
+    // wants site traffic charts.
+    for (const selector of [".theme-toggle", ".dot-rail", ".kbd-hint", ".case-links", ".contact-block", "#insights"]) {
       const display = await page
         .locator(selector)
         .first()
@@ -32,8 +34,10 @@ test.describe("print (the PDF path is a first-class deliverable)", () => {
     await expect(page.locator(".print-contact")).toContainText("krishnaharshap11@gmail.com");
     await expect(page.locator(".print-contact")).toContainText("linkedin.com/in/krishna-p-472514236");
 
-    // All six sections keep their content in the flow
-    await expect(page.locator("main .slide")).toHaveCount(6);
+    // All six resume sections keep their content in the flow. #insights is
+    // excluded by selector rather than by bumping the number, because the
+    // assertion is about the printed resume, not the deck length.
+    await expect(page.locator("main .slide:not(#insights)")).toHaveCount(6);
     for (const heading of [
       "Krishna Harsha Puppala",
       "Tooling chosen by risk, not fashion",
