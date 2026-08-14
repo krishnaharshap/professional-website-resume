@@ -12,6 +12,17 @@ export const test = base.extend({
       if (message.type() === "error") errors.push("console: " + message.text());
     });
 
+    // The live analytics collector is a real cross-origin host now that
+    // index.html carries data-collector. Its Origin check correctly rejects
+    // localhost, and Chromium logs that as a console error, which would fail
+    // every test in this suite for a reason that has nothing to do with the
+    // test itself. Stub it here so beacon delivery is a no-op unless a test
+    // (tests/analytics.spec.ts) deliberately injects its own fake collector
+    // URL and asserts against it.
+    await page.route("**/portfolio-analytics.krishnaharshap11.workers.dev/e", (route) =>
+      route.fulfill({ status: 204, body: "" })
+    );
+
     await use(page);
 
     expect(errors, "page must not log console or page errors").toEqual([]);
