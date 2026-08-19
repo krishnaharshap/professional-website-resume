@@ -104,7 +104,7 @@
   ],
   "experience": [
     {
-      "position": "QA Engineer (Internship)",
+      "position": "QA Engineer",
       "company": "Walnut Insurance",
       "location": "Calgary, AB",
       "duration": "June 2026 - Present",
@@ -231,7 +231,7 @@
       },
       {
         "risk": "Links go stale, or the downloadable resume falls out of sync",
-        "control": "Broken links are caught on a schedule, and the PDF is generated from this same page so it can not drift"
+        "control": "Broken links are caught on a schedule, and the PDF is generated from this same page so it cannot drift"
       }
     ],
     "links": {

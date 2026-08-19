@@ -31,6 +31,7 @@ function link(url, text, { external = true } = {}) {
   if (!href) return el("span", null, text);
   const anchor = el("a", null, text);
   anchor.href = href;
+  anchor.title = href.startsWith("mailto:") ? href.slice(7) : href;
   if (external && !href.startsWith("mailto:")) {
     anchor.target = "_blank";
     anchor.rel = "noopener";
