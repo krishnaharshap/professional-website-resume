@@ -318,6 +318,7 @@ a:hover { text-decoration-thickness: 2px; }
 .project-card p { color: var(--text-2); font-size: 0.95em; flex-grow: 1; }
 .project-tech { font-size: 0.78rem; color: var(--text-2); }
 .project-links { display: flex; gap: 1.25rem; }
+.project-links a { font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
 
 .case-study {
   border: 1px solid var(--border);
