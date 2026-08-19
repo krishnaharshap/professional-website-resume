@@ -23,6 +23,23 @@ export const test = base.extend({
       route.fulfill({ status: 204, body: "" })
     );
 
+    // data/analytics.json is committed real data now that the Publish
+    // analytics workflow runs daily, so its generatedAt is no longer reliably
+    // null the way tests outside tests/analytics.spec.ts assume. Every other
+    // spec navigates expecting exactly 6 sections with #insights hidden;
+    // stub the file inert by default so that stays true regardless of what
+    // the repo's live analytics data looks like on any given day.
+    // tests/analytics.spec.ts registers its own page.route on this same URL
+    // per test via serveAnalytics(), which is added after this one and so
+    // takes priority for that suite.
+    await page.route("**/data/analytics.json*", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ generatedAt: null }),
+      })
+    );
+
     await use(page);
 
     expect(errors, "page must not log console or page errors").toEqual([]);
