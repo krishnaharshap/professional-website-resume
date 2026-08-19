@@ -261,7 +261,6 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 1.75rem 3rem;
 }
 .skill-group h3 { color: var(--text); margin-bottom: 0.4rem; }
-.skill-group[data-weight="1"] h3 { color: var(--accent); }
 .skill-group ul { list-style: none; }
 .skill-group li {
   display: inline;
