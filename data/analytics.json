@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-21T06:32:50.796Z",
+  "generatedAt": "2026-08-22T06:25:58.671Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-07-25",
       "2026-07-26",
       "2026-07-27",
       "2026-07-28",
@@ -31,10 +30,10 @@
       "2026-08-18",
       "2026-08-19",
       "2026-08-20",
-      "2026-08-21"
+      "2026-08-21",
+      "2026-08-22"
     ],
     "sessions": [
-      0,
       0,
       0,
       0,
@@ -61,6 +60,7 @@
       4,
       6,
       2,
+      2,
       0
     ],
     "sessionsMean7": [
@@ -82,7 +82,6 @@
       0,
       0,
       0,
-      0,
       0.14,
       1.29,
       1.43,
@@ -91,13 +90,14 @@
       3.14,
       4,
       4.14,
-      3
+      3.29,
+      3.14
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 21
+      "total": 23
     },
     {
       "key": "github",
@@ -108,45 +108,45 @@
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 30,
+      "sessions": 32,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 17,
-      "rate": 0.567
+      "sessions": 19,
+      "rate": 0.594
     },
     {
       "index": 2,
       "label": "Experience",
-      "sessions": 15,
-      "rate": 0.5
+      "sessions": 17,
+      "rate": 0.531
     },
     {
       "index": 3,
       "label": "Regulated QE",
-      "sessions": 14,
-      "rate": 0.467
+      "sessions": 16,
+      "rate": 0.5
     },
     {
       "index": 4,
       "label": "Projects",
-      "sessions": 9,
-      "rate": 0.3
+      "sessions": 10,
+      "rate": 0.313
     },
     {
       "index": 5,
       "label": "Contact",
-      "sessions": 9,
-      "rate": 0.3
+      "sessions": 10,
+      "rate": 0.313
     }
   ],
   "kpi": {
-    "sessionsWindow": 30,
+    "sessionsWindow": 32,
     "windowDays": 28,
     "sessionsDelta": null,
-    "readThroughRate": 0.3,
+    "readThroughRate": 0.313,
     "topSource": "direct",
     "pdfDownloads": 2,
     "mobileShare": 0
