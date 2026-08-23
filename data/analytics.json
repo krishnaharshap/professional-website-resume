@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-22T06:25:58.671Z",
+  "generatedAt": "2026-08-23T06:27:50.516Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-07-26",
       "2026-07-27",
       "2026-07-28",
       "2026-07-29",
@@ -31,10 +30,10 @@
       "2026-08-19",
       "2026-08-20",
       "2026-08-21",
-      "2026-08-22"
+      "2026-08-22",
+      "2026-08-23"
     ],
     "sessions": [
-      0,
       0,
       0,
       0,
@@ -61,6 +60,7 @@
       6,
       2,
       2,
+      187,
       0
     ],
     "sessionsMean7": [
@@ -81,7 +81,6 @@
       0,
       0,
       0,
-      0,
       0.14,
       1.29,
       1.43,
@@ -91,13 +90,14 @@
       4,
       4.14,
       3.29,
-      3.14
+      29.86,
+      29.86
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 23
+      "total": 210
     },
     {
       "key": "github",
@@ -108,47 +108,47 @@
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 32,
+      "sessions": 219,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 19,
-      "rate": 0.594
+      "sessions": 142,
+      "rate": 0.648
     },
     {
       "index": 2,
       "label": "Experience",
-      "sessions": 17,
-      "rate": 0.531
+      "sessions": 108,
+      "rate": 0.493
     },
     {
       "index": 3,
       "label": "Regulated QE",
-      "sessions": 16,
-      "rate": 0.5
+      "sessions": 106,
+      "rate": 0.484
     },
     {
       "index": 4,
       "label": "Projects",
-      "sessions": 10,
-      "rate": 0.313
+      "sessions": 83,
+      "rate": 0.379
     },
     {
       "index": 5,
       "label": "Contact",
-      "sessions": 10,
-      "rate": 0.313
+      "sessions": 82,
+      "rate": 0.374
     }
   ],
   "kpi": {
-    "sessionsWindow": 32,
+    "sessionsWindow": 219,
     "windowDays": 28,
     "sessionsDelta": null,
-    "readThroughRate": 0.313,
+    "readThroughRate": 0.374,
     "topSource": "direct",
-    "pdfDownloads": 2,
-    "mobileShare": 0
+    "pdfDownloads": 27,
+    "mobileShare": 0.155
   }
 }
