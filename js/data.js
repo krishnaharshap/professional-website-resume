@@ -3,7 +3,7 @@
 // allowlist. Sections are never added or removed, only filled, so the
 // dot rail, hashes, and print layout stay stable on partial data.
 
-const ALLOWED_PROTOCOLS = ["https:", "mailto:"];
+const ALLOWED_PROTOCOLS = ["https:", "mailto:", "tel:"];
 
 // Entries before this index render in #experience-body (software QA,
 // 2023 - present: Walnut, upskilling, SGIC, AppLabb), the rest in
@@ -111,10 +111,39 @@ function renderCaseStudy(caseStudy) {
 
 function renderCredential(entry) {
   const item = el("div", "credential-item");
-  item.append(el("h3", null, entry.degree || entry.name));
-  const detail = [entry.institution || entry.issuer, entry.year].filter(Boolean).join(" | ");
-  item.append(el("p", null, detail));
+  const head = el("div", "credential-head");
+  head.append(el("h3", null, entry.degree || entry.name));
+  head.append(el("span", "credential-duration mono", entry.year));
+  item.append(head);
+  item.append(el("p", null, entry.institution || entry.issuer));
   return item;
+}
+
+/**
+ * Phone stays out of the initial DOM entirely so a plain fetch of this page's
+ * HTML never sees it - only a real click does. This defends against casual
+ * scraping of rendered page text; it does not and cannot defend against
+ * someone fetching data/resume-data.json directly, since that file has to
+ * stay publicly fetchable for the rest of the site to hydrate at all.
+ */
+function renderPhoneReveal(phone) {
+  const button = el("button", "phone-reveal mono", "Show phone number");
+  button.type = "button";
+  button.addEventListener(
+    "click",
+    () => {
+      const digits = phone.replace(/\D/g, "");
+      const tel = digits.length === 10 ? "1" + digits : digits;
+      const anchor = link("tel:+" + tel, phone, { external: false });
+      button.replaceWith(anchor);
+      // Focus follows the removed button to the thing that replaced it -
+      // this is the reveal announcement, so no separate aria-live region:
+      // a screen reader already announces the newly focused link's name.
+      anchor.focus();
+    },
+    { once: true }
+  );
+  return button;
 }
 
 export async function hydrate() {
@@ -146,7 +175,7 @@ export async function hydrate() {
         const primary = el("div", "contact-primary");
         primary.append(
           link("mailto:" + data.contact.email, data.contact.email, { external: false }),
-          el("span", "mono", data.contact.phone)
+          renderPhoneReveal(data.contact.phone)
         );
         const secondary = el("div", "contact-secondary");
         secondary.append(
@@ -156,6 +185,9 @@ export async function hydrate() {
         );
         host.replaceChildren(primary, secondary);
       }
+
+      const printPhone = document.getElementById("print-contact-phone");
+      if (printPhone) printPhone.textContent = data.contact.phone + " ·";
     }
 
     const updated = document.getElementById("last-updated");

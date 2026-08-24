@@ -61,13 +61,36 @@ test.describe("content", () => {
     await expect(page.locator("#education-body")).toContainText("Metallurgical & Materials Engineering");
     await expect(page.locator("#certifications-body")).toContainText("ISTQB");
     // Contact lives in one place only: grouped as primary (email, phone)
-    // and secondary (location, profiles), never repeated in the hero.
-    await expect(page.locator(".contact-primary")).toContainText("(587) 409-6060");
+    // and secondary (location, profiles), never repeated in the hero. The
+    // phone number stays out of the DOM until a click reveals it - see the
+    // dedicated "phone number stays hidden until revealed" test below for
+    // the check that actually proves that against the raw server response.
     await expect(page.locator(".contact-primary a[href^='mailto:']")).toBeAttached();
     await expect(page.locator(".contact-secondary")).toContainText("Calgary");
     await expect(page.locator(".contact-secondary a")).toHaveCount(2);
     await expect(page.locator(".hero-links a")).toHaveCount(1);
     await expect(page.locator("#last-updated")).toContainText("content v");
+  });
+
+  test("phone number stays hidden until revealed", async ({ page }) => {
+    // The real claim is about the server response, not the post-hydration
+    // DOM - page.content() after goto would pass even if the fix were wrong,
+    // since it reflects the DOM after hydrate() has already run.
+    const raw = await page.request.get("./");
+    expect(await raw.text()).not.toContain("409-6060");
+
+    await page.goto("./");
+    await waitForHydration(page);
+
+    const revealButton = page.getByRole("button", { name: "Show phone number" });
+    await expect(revealButton).toBeVisible();
+    await expect(page.locator(".contact-primary")).not.toContainText("409-6060");
+
+    await revealButton.click();
+    await expect(page.locator(".contact-primary")).toContainText("(587) 409-6060");
+    const telLink = page.locator(".contact-primary a[href^='tel:']");
+    await expect(telLink).toBeAttached();
+    await expect(telLink).toBeFocused();
   });
 
   test("banned characters never render (anti AI-slop gate)", async ({ page }) => {
