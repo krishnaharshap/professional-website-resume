@@ -28,9 +28,9 @@ test.describe("content", () => {
     await expect(skills).toContainText("FDA Design Controls");
     await expect(skills).toContainText("AI-assisted test case generation");
 
-    // Experience: Walnut current with internship label, metric-first entries
+    // Experience: Walnut current, metric-first entries
     const experience = page.locator("#experience-body");
-    await expect(experience).toContainText("QA Engineer (Internship)");
+    await expect(experience).toContainText("QA Engineer");
     await expect(experience).toContainText("Walnut Insurance");
     await expect(experience).toContainText("June 2026 - Present");
     await expect(experience).toContainText("Sovereign General Insurance Company");

@@ -380,8 +380,13 @@ test.describe("insights dashboard", () => {
     await expect(page.locator("#insights")).toBeHidden();
   });
 
-  test("stays hidden for the shipped seed file", async ({ page }) => {
-    // The committed data/analytics.json has generatedAt null on purpose.
+  test("stays hidden when generatedAt is null", async ({ page }) => {
+    // Explicit fixture rather than the committed data/analytics.json: that
+    // file now holds real output from the daily Publish analytics workflow,
+    // so its generatedAt is whatever the last real run produced, not
+    // reliably null. This asserts the inert-state contract directly instead
+    // of depending on live data staying in a particular shape.
+    await serveAnalytics(page, { generatedAt: null });
     await page.goto("./");
     await waitForHydration(page);
     await expect(page.locator("#insights")).toBeHidden();
