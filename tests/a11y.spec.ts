@@ -45,6 +45,28 @@ test.describe("accessibility", () => {
     await expect(page.locator("#credentials")).toBeFocused();
   });
 
+  test("phone reveal is keyboard-operable and stays clean after axe scan", async ({ page }) => {
+    await page.goto("./");
+    await waitForHydration(page);
+
+    const revealButton = page.getByRole("button", { name: "Show phone number" });
+    await revealButton.focus();
+    await expect(revealButton).toBeFocused();
+    await page.keyboard.press("Enter");
+
+    const telLink = page.locator(".contact-primary a[href^='tel:']");
+    await expect(telLink).toBeFocused();
+
+    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
+    const serious = results.violations.filter((violation) =>
+      ["critical", "serious"].includes(violation.impact ?? "")
+    );
+    expect(
+      serious.map((violation) => `${violation.id}: ${violation.help}`),
+      "axe violations after revealing the phone number"
+    ).toEqual([]);
+  });
+
   test("landmarks and labels exist", async ({ page }) => {
     await page.goto("./");
     await expect(page.locator("nav[aria-label='Sections']")).toBeAttached();

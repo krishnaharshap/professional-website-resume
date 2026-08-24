@@ -256,12 +256,12 @@
   "certifications": [
     {
       "name": "Information Technology Fundamentals Certificate",
-      "issuer": "Southern Alberta Institute of Technology (SAIT), Calgary",
+      "issuer": "SAIT",
       "year": "Apr - May 2026"
     },
     {
       "name": "CCIS IT Bridging Program, Employment Skills Training",
-      "issuer": "Calgary Catholic Immigration Society",
+      "issuer": "CCIS",
       "year": "Feb - Apr 2026"
     },
     {
@@ -271,12 +271,12 @@
     },
     {
       "name": "AWS Certified Cloud Practitioner (CLF-C02)",
-      "issuer": "Amazon Web Services",
+      "issuer": "AWS",
       "year": "2024"
     },
     {
       "name": "ISTQB Certified Tester, Foundation Level (CTFL)",
-      "issuer": "International Software Testing Qualifications Board",
+      "issuer": "ISTQB",
       "year": "2024"
     }
   ],

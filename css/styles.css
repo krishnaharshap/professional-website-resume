@@ -353,7 +353,17 @@ a:hover { text-decoration-thickness: 2px; }
   margin-bottom: 2.5rem;
 }
 .credential-item { margin-bottom: 1.1rem; }
-.credential-item p { color: var(--text-2); font-size: 0.9em; }
+.credential-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  margin: 0.2rem 0 0.35rem;
+}
+.credential-head h3 { margin: 0; }
+.credential-duration { font-size: 0.8125rem; color: var(--text-2); white-space: nowrap; }
+.credential-item p { color: var(--text-2); font-size: 0.9em; margin: 0; }
 
 /* Contact is grouped in two tiers: primary (email, phone) reads first and
    largest since it is the actual reach-out action; secondary (location,
@@ -375,6 +385,18 @@ a:hover { text-decoration-thickness: 2px; }
   align-items: center;
 }
 .contact-primary span { font-size: 1.05rem; color: var(--text-2); }
+.phone-reveal {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.phone-reveal:hover, .phone-reveal:focus-visible { border-color: var(--accent); color: var(--accent); }
 .contact-secondary {
   display: flex;
   flex-wrap: wrap;
