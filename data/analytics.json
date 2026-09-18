@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-17T10:44:15.002Z",
+  "generatedAt": "2026-09-18T10:19:53.144Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-08-21",
       "2026-08-22",
       "2026-08-23",
       "2026-08-24",
@@ -31,10 +30,10 @@
       "2026-09-14",
       "2026-09-15",
       "2026-09-16",
-      "2026-09-17"
+      "2026-09-17",
+      "2026-09-18"
     ],
     "sessions": [
-      2,
       187,
       7,
       7,
@@ -61,6 +60,7 @@
       1,
       0,
       0,
+      0,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      29.57,
       29.29,
       3.43,
       2.86,
@@ -91,60 +90,61 @@
       1.86,
       1.71,
       1.29,
-      0.86
+      0.86,
+      0.57
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 237
+      "total": 235
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 241,
+      "sessions": 239,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 132,
-      "rate": 0.548
+      "sessions": 130,
+      "rate": 0.544
     },
     {
       "index": 2,
       "label": "Experience",
-      "sessions": 99,
-      "rate": 0.411
+      "sessions": 97,
+      "rate": 0.406
     },
     {
       "index": 3,
       "label": "Regulated QE",
-      "sessions": 98,
-      "rate": 0.407
+      "sessions": 96,
+      "rate": 0.402
     },
     {
       "index": 4,
       "label": "Projects",
-      "sessions": 79,
-      "rate": 0.328
+      "sessions": 78,
+      "rate": 0.326
     },
     {
       "index": 5,
       "label": "Contact",
-      "sessions": 78,
-      "rate": 0.324
+      "sessions": 77,
+      "rate": 0.322
     }
   ],
   "kpi": {
-    "sessionsWindow": 241,
+    "sessionsWindow": 239,
     "windowDays": 28,
     "sessionsDelta": null,
-    "readThroughRate": 0.324,
+    "readThroughRate": 0.322,
     "topSource": "direct",
     "pdfDownloads": 26,
-    "mobileShare": 0.141
+    "mobileShare": 0.142
   }
 }
