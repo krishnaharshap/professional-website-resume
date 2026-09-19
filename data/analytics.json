@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-18T10:19:53.144Z",
+  "generatedAt": "2026-09-19T10:02:55.927Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-08-22",
       "2026-08-23",
       "2026-08-24",
       "2026-08-25",
@@ -31,10 +30,10 @@
       "2026-09-15",
       "2026-09-16",
       "2026-09-17",
-      "2026-09-18"
+      "2026-09-18",
+      "2026-09-19"
     ],
     "sessions": [
-      187,
       7,
       7,
       1,
@@ -61,6 +60,7 @@
       0,
       0,
       0,
+      0,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      29.29,
       3.43,
       2.86,
       2,
@@ -91,60 +90,61 @@
       1.71,
       1.29,
       0.86,
-      0.57
+      0.57,
+      0.14
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 235
+      "total": 48
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 239,
+      "sessions": 52,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 130,
-      "rate": 0.544
+      "sessions": 7,
+      "rate": 0.135
     },
     {
       "index": 2,
       "label": "Experience",
-      "sessions": 97,
-      "rate": 0.406
+      "sessions": 6,
+      "rate": 0.115
     },
     {
       "index": 3,
       "label": "Regulated QE",
-      "sessions": 96,
-      "rate": 0.402
+      "sessions": 6,
+      "rate": 0.115
     },
     {
       "index": 4,
       "label": "Projects",
-      "sessions": 78,
-      "rate": 0.326
+      "sessions": 5,
+      "rate": 0.096
     },
     {
       "index": 5,
       "label": "Contact",
-      "sessions": 77,
-      "rate": 0.322
+      "sessions": 5,
+      "rate": 0.096
     }
   ],
   "kpi": {
-    "sessionsWindow": 239,
+    "sessionsWindow": 52,
     "windowDays": 28,
     "sessionsDelta": null,
-    "readThroughRate": 0.322,
+    "readThroughRate": 0.096,
     "topSource": "direct",
-    "pdfDownloads": 26,
-    "mobileShare": 0.142
+    "pdfDownloads": 1,
+    "mobileShare": 0
   }
 }
