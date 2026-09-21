@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-20T10:22:25.388Z",
+  "generatedAt": "2026-09-21T11:36:14.066Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-08-24",
       "2026-08-25",
       "2026-08-26",
       "2026-08-27",
@@ -31,10 +30,10 @@
       "2026-09-17",
       "2026-09-18",
       "2026-09-19",
-      "2026-09-20"
+      "2026-09-20",
+      "2026-09-21"
     ],
     "sessions": [
-      7,
       1,
       1,
       2,
@@ -61,6 +60,7 @@
       0,
       0,
       0,
+      0,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      2.86,
       2,
       2.14,
       2,
@@ -91,39 +90,40 @@
       0.86,
       0.57,
       0.14,
-      0.14
+      0.14,
+      0
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 41
+      "total": 35
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 45,
+      "sessions": 38,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 6,
-      "rate": 0.133
+      "sessions": 5,
+      "rate": 0.132
     },
     {
       "index": 2,
       "label": "Experience",
-      "sessions": 5,
-      "rate": 0.111
+      "sessions": 0,
+      "rate": 0
     },
     {
       "index": 3,
       "label": "Regulated QE",
-      "sessions": 5,
-      "rate": 0.111
+      "sessions": 0,
+      "rate": 0
     },
     {
       "index": 4,
@@ -139,7 +139,7 @@
     }
   ],
   "kpi": {
-    "sessionsWindow": 45,
+    "sessionsWindow": 38,
     "windowDays": 28,
     "sessionsDelta": null,
     "readThroughRate": 0,
