@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-23T10:33:09.460Z",
+  "generatedAt": "2026-09-24T10:51:48.670Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-08-27",
       "2026-08-28",
       "2026-08-29",
       "2026-08-30",
@@ -31,10 +30,10 @@
       "2026-09-20",
       "2026-09-21",
       "2026-09-22",
-      "2026-09-23"
+      "2026-09-23",
+      "2026-09-24"
     ],
     "sessions": [
-      2,
       0,
       6,
       3,
@@ -61,6 +60,7 @@
       0,
       1,
       0,
+      0,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      2,
       2,
       2,
       1.43,
@@ -91,27 +90,28 @@
       0.14,
       0.14,
       0.14,
+      0.14,
       0.14
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 34
+      "total": 32
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 37,
+      "sessions": 35,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
       "sessions": 5,
-      "rate": 0.135
+      "rate": 0.143
     },
     {
       "index": 2,
@@ -139,7 +139,7 @@
     }
   ],
   "kpi": {
-    "sessionsWindow": 37,
+    "sessionsWindow": 35,
     "windowDays": 28,
     "sessionsDelta": null,
     "readThroughRate": 0,
