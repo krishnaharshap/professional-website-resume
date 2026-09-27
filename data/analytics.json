@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-26T10:34:53.756Z",
+  "generatedAt": "2026-09-27T11:07:38.610Z",
   "minSample": 30,
   "sampleMet": true,
   "series": {
     "days": [
-      "2026-08-30",
       "2026-08-31",
       "2026-09-01",
       "2026-09-02",
@@ -31,10 +30,10 @@
       "2026-09-23",
       "2026-09-24",
       "2026-09-25",
-      "2026-09-26"
+      "2026-09-26",
+      "2026-09-27"
     ],
     "sessions": [
-      3,
       1,
       2,
       0,
@@ -61,6 +60,7 @@
       0,
       1,
       0,
+      4,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      1.43,
       1.29,
       1.57,
       1.43,
@@ -91,27 +90,28 @@
       0.14,
       0.29,
       0.29,
-      0.29
+      0.86,
+      0.86
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 27
+      "total": 28
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 30,
+      "sessions": 31,
       "rate": 1
     },
     {
       "index": 1,
       "label": "Skills",
-      "sessions": 5,
-      "rate": 0.167
+      "sessions": 0,
+      "rate": 0
     },
     {
       "index": 2,
@@ -139,12 +139,12 @@
     }
   ],
   "kpi": {
-    "sessionsWindow": 30,
+    "sessionsWindow": 31,
     "windowDays": 28,
     "sessionsDelta": null,
     "readThroughRate": 0,
     "topSource": "direct",
-    "pdfDownloads": 1,
+    "pdfDownloads": 0,
     "mobileShare": 0
   }
 }
