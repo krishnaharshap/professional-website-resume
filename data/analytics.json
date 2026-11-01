@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-10-31T11:29:26.053Z",
+  "generatedAt": "2026-11-01T12:26:34.129Z",
   "minSample": 30,
   "sampleMet": false,
   "series": {
     "days": [
-      "2026-10-04",
       "2026-10-05",
       "2026-10-06",
       "2026-10-07",
@@ -31,10 +30,10 @@
       "2026-10-28",
       "2026-10-29",
       "2026-10-30",
-      "2026-10-31"
+      "2026-10-31",
+      "2026-11-01"
     ],
     "sessions": [
-      0,
       2,
       0,
       0,
@@ -61,6 +60,7 @@
       1,
       0,
       0,
+      2,
       0
     ],
     "sessionsMean7": [
@@ -70,7 +70,6 @@
       null,
       null,
       null,
-      0.29,
       0.57,
       0.43,
       0.43,
@@ -91,25 +90,26 @@
       0.43,
       0.43,
       0.43,
-      0.43
+      0.71,
+      0.71
     ]
   },
   "sources": [
     {
       "key": "direct",
-      "total": 9
+      "total": 11
     }
   ],
   "readThrough": [
     {
       "index": 0,
       "label": "Intro",
-      "sessions": 9,
+      "sessions": 11,
       "rate": 1
     }
   ],
   "kpi": {
-    "sessionsWindow": 9,
+    "sessionsWindow": 11,
     "windowDays": 28,
     "sessionsDelta": null,
     "readThroughRate": 1,
